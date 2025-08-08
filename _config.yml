@@ -1,7 +1,3 @@
-title: Horizon News
-description: ताज़ा और विश्वसनीय समाचार
-baseurl: ""
-url: "https://<your-username>.github.io"
-theme: minima
-plugins:
-  - jekyll-feed
+title: Horizon News & Blog
+description: लेटेस्ट न्यूज़, ब्लॉग, और टेक रिव्यू 2025
+keywords: न्यूज़, ब्लॉग, टेक, स्मार्टफोन्स
