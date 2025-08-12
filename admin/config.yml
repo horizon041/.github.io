@@ -61,5 +61,21 @@ collections:
         fields:
           - { label: "Site Title", name: "site_title", widget: "string" }
           - { label: "Meta Description", name: "meta_description", widget: "text" }
-
+          - label: "Title (English)"
+  name: "title_en"
+  widget: "string"
+- label: "Title (Hindi)"
+  name: "title_hi"
+  widget: "string"
+- label: "Body (English)"
+  name: "body_en"
+  widget: "markdown"
+- label: "Body (Hindi)"
+  name: "body_hi"
+  widget: "markdown"
+- label: "Translate Automatically"
+  name: "auto_translate"
+  widget: "boolean"
+  default: false
+  hint: "Enable auto-translation when you write in only one language."
 # Custom widgets (AI generators) will be registered in the CMS JS
