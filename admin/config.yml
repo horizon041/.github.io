@@ -61,7 +61,7 @@ collections:
         fields:
           - { label: "Site Title", name: "site_title", widget: "string" }
           - { label: "Meta Description", name: "meta_description", widget: "text" }
-          - label: "Title (English)"
+- label: "Title (English)"
   name: "title_en"
   widget: "string"
 - label: "Title (Hindi)"
