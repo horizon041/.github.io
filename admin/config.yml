@@ -1,0 +1,65 @@
+backend:
+  name: github
+  repo: horizon041/.github.io
+  branch: main # or master, use your default branch
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow # Enables moderation
+
+site_url: "https://horizon041.github.io"
+logo_url: "https://img.icons8.com/color/96/000000/horizon.png"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{slug}}"
+    sortable_fields: ['commit_date:desc', 'title', 'categories']
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "Use 'Generate Title' for AI suggestion", required: true }
+      - { label: "AI Title Generator", name: "ai_title", widget: "customAIGenerator", required: false }
+      - { label: "SEO Description", name: "description", widget: "text", pattern: ['^.{50,160}$', "Between 50-160 chars"], hint: "For search engines." }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: true }
+      - { label: "Categories", name: "categories", widget: "relation", collection: "categories", search_fields: ["title"], value_field: "title", display_fields: ["title"], multiple: true }
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Press enter to add. Use 'AI Generate'." }
+      - { label: "AI Tags Generator", name: "ai_tags", widget: "customAITagsGenerator", required: false }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - { label: "Video Embed (YouTube/Vimeo/Etc)", name: "video", widget: "string", required: false, hint: "Paste embed URL or iframe." }
+      - { label: "Affiliation Link", name: "afflink", widget: "string", required: false }
+      - { label: "Dropshipping Link", name: "dropship", widget: "string", required: false }
+      - { label: "Freelancing Link", name: "freelance", widget: "string", required: false }
+      - { label: "Project Discussion", name: "discussion", widget: "markdown", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: true, hint: "Use headings, paragraphs, images, code, etc." }
+      - { label: "Show Likes", name: "likes", widget: "number", default: 0, required: false }
+      - { label: "Show Visitors (auto)", name: "visitors", widget: "hidden", default: 0, required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
+
+  - name: "categories"
+    label: "Categories"
+    folder: "_categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "SEO & General"
+        name: "seo"
+        file: "_data/seo.yml"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "text" }
+
+# Custom widgets (AI generators) will be registered in the CMS JS
