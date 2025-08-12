@@ -1,7 +1,59 @@
-title: Horizon News & Blog
-description: लेटेस्ट न्यूज़, ब्लॉग, और टेक रिव्यू 2025
-keywords: न्यूज़, ब्लॉग, टेक, स्मार्टफोन्स
-url: "https://horizon041.github.io.github.io"
+# Jekyll configuration file for a GitHub Pages site
+
+title: "Your Site Title"
+description: "A short description of your site"
+author: "Your Name"
+email: "your-email@example.com"
+url: "https://horizon041.github.io"
+baseurl: "" # Leave empty for GitHub Pages user/organization site, use "/repo-name" for project sites
+
+# Theme (choose one, e.g., minima, cayman, slate, etc.)
 theme: minima
+
+# Social Links (optional)
+twitter_username: your-twitter
+github_username: horizon041
+linkedin_username: your-linkedin
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Plugins (optional, for advanced features)
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude files/folders from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Defaults (optional)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+
+# Collections (optional)
+# collections:
+#   my_collection:
+#     output: true
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# Pagination (optional)
+# paginate: 5
+# paginate_path: "/page:num/"
+
+# Custom Variables (optional)
+# custom_var: "value"
