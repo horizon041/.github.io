@@ -103,3 +103,16 @@
 <ul>
   <li><a href="news1.html">Breaking News: Major Event in 2025</a></li>
 </ul>
+---
+layout: default
+---
+
+<h1>Latest Blog Posts</h1>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%d %B %Y" }}</span>
+    </li>
+  {% endfor %}
+</ul>
