@@ -24,3 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+<script>
+  function toggleLang(btn) {
+    const post = btn.closest('.post');
+    const hindiDiv = post.querySelector('.hindi');
+    const englishDiv = post.querySelector('.english');
+    if (hindiDiv.style.display !== "none") {
+      hindiDiv.style.display = "none";
+      englishDiv.style.display = "";
+      btn.innerText = "स्विच करें हिंदी में";
+    } else {
+      hindiDiv.style.display = "";
+      englishDiv.style.display = "none";
+      btn.innerText = "Switch to English";
+    }
+  }
+</script>
