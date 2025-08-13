@@ -180,3 +180,101 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>News - Horizon</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .post {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 28px;
+      background: #21243b;
+      border-radius: 18px;
+      box-shadow: 0 6px 24px #10122333;
+    }
+    .lang-switch-btn {
+      margin-top: 18px;
+      padding: 10px 25px;
+      background: linear-gradient(90deg, #1fd1f9, #ff7eb3 80%);
+      color: #191c2b;
+      border-radius: 24px;
+      border: none;
+      font-weight: bold;
+      font-size: 1.07rem;
+      cursor: pointer;
+      transition: background 0.17s, color 0.17s;
+      outline: none;
+    }
+    .lang-switch-btn:hover {
+      background: linear-gradient(90deg, #ff7eb3, #1fd1f9 80%);
+      color: #fff;
+    }
+    h2 { margin-bottom: 8px; }
+    p { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="text-align:center; color:#1fd1f9; margin-top:32px;">लेटेस्ट न्यूज़ / Latest News</h1>
+  </header>
+
+  <!-- Example News Post 1 -->
+  <div class="post">
+    <div class="post-content hindi" style="display:;">
+      <h2>बिहार में बाढ़: जनजीवन प्रभावित</h2>
+      <p>लगातार बारिश के कारण बिहार के कई जिलों में बाढ़ आ गई है। प्रशासन राहत कार्य में जुटा है।</p>
+    </div>
+    <div class="post-content english" style="display:none;">
+      <h2>Flood in Bihar: Life Disrupted</h2>
+      <p>Due to continuous rains, several districts of Bihar are flooded. The administration is carrying out relief work.</p>
+    </div>
+    <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
+  </div>
+
+  <!-- Example News Post 2 -->
+  <div class="post">
+    <div class="post-content hindi" style="display:;">
+      <h2>क्रिकेट वर्ल्ड कप: भारत ने पाकिस्तान को हराया</h2>
+      <p>भारत ने पाकिस्तान को रोमांचक मुकाबले में 5 विकेट से हरा दिया। विराट कोहली मैन ऑफ द मैच बने।</p>
+    </div>
+    <div class="post-content english" style="display:none;">
+      <h2>Cricket World Cup: India Beats Pakistan</h2>
+      <p>India defeated Pakistan by 5 wickets in a thrilling match. Virat Kohli was named Man of the Match.</p>
+    </div>
+    <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
+  </div>
+
+  <!-- Example News Post 3 -->
+  <div class="post">
+    <div class="post-content hindi" style="display:;">
+      <h2>नई तकनीक: AI से बदलेगी शिक्षा</h2>
+      <p>आर्टिफिशियल इंटेलिजेंस के उपयोग से शिक्षा क्षेत्र में बड़े बदलाव आने वाले हैं।</p>
+    </div>
+    <div class="post-content english" style="display:none;">
+      <h2>New Technology: AI to Transform Education</h2>
+      <p>With the use of Artificial Intelligence, major changes are expected in the field of education.</p>
+    </div>
+    <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
+  </div>
+
+  <script>
+    function toggleLang(btn) {
+      const post = btn.closest('.post');
+      const hindiDiv = post.querySelector('.hindi');
+      const englishDiv = post.querySelector('.english');
+      if (hindiDiv.style.display !== "none") {
+        hindiDiv.style.display = "none";
+        englishDiv.style.display = "";
+        btn.innerText = "स्विच करें हिंदी में";
+      } else {
+        hindiDiv.style.display = "";
+        englishDiv.style.display = "none";
+        btn.innerText = "Switch to English";
+      }
+    }
+  </script>
+</body>
+</html>
