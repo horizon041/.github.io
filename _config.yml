@@ -11,9 +11,9 @@ baseurl: "" # Leave empty for GitHub Pages user/organization site, use "/repo-na
 theme: minima
 
 # Social Links (optional)
-twitter_username: your-twitter
+twitter_username: your-@horizonthesp
 github_username: horizon041
-linkedin_username: your-linkedin
+linkedin_username: rakesh-kumar-955988241
 
 # Build settings
 markdown: kramdown
@@ -41,7 +41,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Rakesh Kumar"
 
 # Collections (optional)
 # collections:
