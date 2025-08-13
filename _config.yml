@@ -57,19 +57,3 @@ defaults:
 
 # Custom Variables (optional)
 # custom_var: "value"
-backend:
-  name: github
-  repo: your-username/your-repo-name # अपने GitHub रेपो का नाम डालें
-media_folder: "static/uploads"
-public_folder: "/uploads"
-collections:
-  - name: "blog"
-    label: "Blog Posts" # डैशबोर्ड में दिखने वाला नाम
-    folder: "src/content/blog" # ब्लॉग पोस्ट्स की Markdown फाइल्स कहाँ स्टोर होंगी
-    create: true # नई पोस्ट बनाने की अनुमति
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # फाइल नेम फॉर्मेट
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
