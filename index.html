@@ -79,6 +79,17 @@
       padding: 10px 22px;
       border-radius: 28px;
       transition: background 0.22s, color 0.22s, box-shadow 0.18s;
+      <div class="post">
+  <div class="post-content hindi" style="display:;">
+    <h2>पोस्ट का शीर्षक (हिंदी)</h2>
+    <p>यहाँ हिंदी में पोस्ट का कंटेंट है।</p>
+  </div>
+  <div class="post-content english" style="display:none;">
+    <h2>Post Title (English)</h2>
+    <p>This is the post content in English.</p>
+  </div>
+  <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
+</div>
       background: rgba(255,255,255,0.05);
       box-shadow: 0 2px 12px #1fd1f911;
       border: 1.5px solid transparent;
