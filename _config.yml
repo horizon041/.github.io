@@ -3,7 +3,7 @@
 title: "Horizon Blog"
 description: "a informational website for multitasking"
 author: "Rakesh Kumar"
-url: "https://horizon041.github.io/.github.io/#"  # अपनी साइट का URL
+url: "https://horizon041.github.io/sp/"  # अपनी साइट का URL
 baseurl: ""  # Leave empty for GitHub Pages user/organization site, use "/repo-name" for project sites
 
 # Theme (choose one, e.g., minima, cayman, slate, etc.)
