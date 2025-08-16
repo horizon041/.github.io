@@ -1,22 +1,20 @@
 # Jekyll configuration file for a GitHub Pages site
 
-title: "Your Site Title"
-description: "A short description of your site"
-author: "Your Name"
-email: "your-email@example.com"
-url: "https://horizon041.github.io"
-baseurl: "" # Leave empty for GitHub Pages user/organization site, use "/repo-name" for project sites
+title: "Horizon Blog"
+description: "a informational website for multitasking"
+author: "Rakesh Kumar"
+url: "https://horizon041.github.io/.github.io/#"  # अपनी साइट का URL
+baseurl: ""  # Leave empty for GitHub Pages user/organization site, use "/repo-name" for project sites
 
 # Theme (choose one, e.g., minima, cayman, slate, etc.)
 theme: minima
 
 # Social Links (optional)
-twitter_username: your-@horizonthesp
+twitter_username: your-horizon04
 github_username: horizon041
-linkedin_username: rakesh-kumar-955988241
+linkedin_username: rakesh-kumar-555963d4
 
 # Build settings
-markdown: kramdown
 permalink: pretty
 
 # Plugins (optional, for advanced features)
@@ -35,25 +33,26 @@ exclude:
 
 # Defaults (optional)
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "Rakesh Kumar"
 
 # Collections (optional)
-# collections:
-#   my_collection:
-#     output: true
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
+  my_collection:
+    output: true  # अगर आप my_collection का उपयोग करना चाहते हैं
 
-# Google Analytics (optional)
-# google_analytics: UA-XXXXXXXX-X
+# Analytics (optional)
+# google_analytics: UA-XXXXXX-X
 
 # Pagination (optional)
-# paginate: 5
-# paginate_path: "/page:num/"
+paginate: 5
+paginate_path: "/page:num/"
 
 # Custom Variables (optional)
 # custom_var: "value"
