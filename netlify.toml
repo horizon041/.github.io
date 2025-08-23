@@ -7,3 +7,7 @@
   RUBY_VERSION = "3.1.2"  # या जो भी आपकी Gemfile में हो
   BUNDLER_VERSION = "2.4.22"  # अगर ज़रूरत हो
 
+[[redirects]]
+  from = "/admin"
+  to = "/static/admin/index.html"
+  status = 200
