@@ -1,5 +1,5 @@
 [build]
-command = "bundle exec jekyll build"
-publish = "_site"
+command = "bundle install && bundle exec jekyll build"
+  publish = "opt/build/repo/_site"
 [build.environment]
 JEKYLL_ENV = "production"
