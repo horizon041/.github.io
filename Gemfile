@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'bundler'
+ruby "3.1.2" # Optional but recommended for Netlify compatibility
+
+gem "jekyll", "~> 4.3"
 gem "minima", "~> 2.5"
 gem "jekyll-sitemap"
+gem "jekyll-feed"
+gem "jekyll-seo-tag"
+
 group :jekyll_plugins do
   gem "jekyll-paginate"
 end
