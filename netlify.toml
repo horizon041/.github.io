@@ -4,7 +4,7 @@
 
 [build.environment]
   JEKYLL_ENV = "production"
-  RUBY_VERSION = "3.1.2"  # या जो भी आपकी Gemfile में हो
+  RUBY_VERSION = "3.2.0"  # या जो भी आपकी Gemfile में हो
   BUNDLER_VERSION = "2.4.22"  # अगर ज़रूरत हो
 
 [[redirects]]
