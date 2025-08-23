@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "3.1.2" # Optional but recommended for Netlify compatibility
+ruby "3.2.0" # Optional but recommended for Netlify compatibility
 
 gem "jekyll", "~> 4.3"
 gem "minima", "~> 2.5"
