@@ -56,3 +56,5 @@ paginate_path: "/page:num/"
 
 # Custom Variables (optional)
 # custom_var: "value"
+paginate: 5
+paginate_path: "/page:num/"
