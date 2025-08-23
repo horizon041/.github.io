@@ -1,16 +1,18 @@
 backend:
-  name: github
-  repo: your-username/your-repo-name # अपने GitHub रेपो का नाम डालें
-media_folder: "static/uploads"
-public_folder: "/uploads"
+  name: git-gateway
+  branch: main   # jis branch pe aapka site code hai
+
+media_folder: "images/uploads"   # yahan images upload hongi
+public_folder: "/images/uploads"
+
 collections:
-  - name: "blog"
+  - name: "posts"
     label: "Blog Posts"
-    folder: "src/content/blog"
+    folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
