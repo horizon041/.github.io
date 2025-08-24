@@ -1,13 +1,15 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-ruby "3.2.0" # Optional but recommended for Netlify compatibility
-
-gem "jekyll", "~> 4.3"
-gem "minima", "~> 2.5"
-gem "jekyll-sitemap"
-gem "jekyll-feed"
-gem "jekyll-seo-tag"
-
+# ✅ GitHub Pages compatibility
 group :jekyll_plugins do
-  gem "jekyll-paginate"
+  gem "github-pages", "~> 232", require: false
 end
+
+# ✅ For Netlify / Local build
+gem "jekyll", "~> 3.10.0"
+gem "minima", "~> 2.5.1"
+
+# ✅ Common plugins (दोनों जगह काम करेंगे)
+gem "jekyll-paginate"
+gem "jekyll-sitemap"
+gem "jekyll-seo-tag"
