@@ -4,7 +4,8 @@
 
 [build.environment]
   JEKYLL_ENV = "production"
-  RUBY_VERSION = "3.2.0"  # या जो भी आपकी Gemfile में हो
+  RUBY_VERSION = "3.2.0"          # Ruby का latest stable use करें
+  BUNDLER_VERSION = "2.4.22"
 
 [[redirects]]
   from = "/admin"
