@@ -2,7 +2,7 @@
 title: "Horizon Blog"
 description: "News & Updates"
 url: "https://your-domain.com"   # 👉 यहाँ अपनी live साइट का URL डालें
-baseurl: ""                      # अगर subdirectory में है तो बदलें, जैसे "/blog"
+baseurl: ""                      # 👉 अगर subdirectory में है तो बदलें, जैसे "/blog"
 
 # 🎨 Theme
 theme: minima
@@ -40,12 +40,12 @@ defaults:
     values:
       layout: "page"
 
-# 🗂️ Collections (अगर future में चाहें तो add कर सकते हैं)
+# 🗂️ Collections (future use)
 collections:
   authors:
     output: true
 
-# ✅ Markdown & Highlighter
+# ✅ Markdown & Syntax Highlighter
 markdown: kramdown
 highlighter: rouge
 
