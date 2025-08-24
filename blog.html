@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Blog
+title: "Blog"
+permalink: /blog/
 ---
 
 <!DOCTYPE html>
@@ -8,12 +9,13 @@ title: Blog
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Awesome Blog</title>
+  <title>{{ page.title }} - {{ site.title }}</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      background: #f4f5fb;
+      color: #333;
     }
 
     nav {
@@ -22,7 +24,7 @@ title: Blog
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 2rem;
+      padding: 0.8rem 2rem;
     }
 
     nav .logo {
@@ -203,12 +205,12 @@ title: Blog
 </head>
 <body>
   <nav>
-    <div class="logo">My Awesome Blog</div>
+    <div class="logo">{{ site.title }}</div>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Categories</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
     </ul>
   </nav>
 
@@ -225,7 +227,7 @@ title: Blog
       <h3>Recent Posts</h3>
       <ul>
         {% for post in site.posts limit:3 %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
     </aside>
@@ -233,8 +235,8 @@ title: Blog
     <main>
       {% for post in site.posts %}
       <div class="blog-post">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <div class="meta">Posted on {{ post.date | date: "%B %d, %Y" }}</div>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <div class="meta">📅 {{ post.date | date: "%d %B %Y" }}</div>
         <p>{{ post.excerpt }}</p>
       </div>
       {% endfor %}
