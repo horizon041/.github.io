@@ -51,3 +51,10 @@ highlighter: rouge
 
 # ✅ Permalinks
 permalink: /:categories/:year/:month/:day/:title/
+
+# 🔗 Navigation Menu (fix)
+header_pages:
+  - index.md
+  - blog.md
+  - about.md
+  - contact.md
