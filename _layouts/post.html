@@ -1,8 +1,32 @@
 ---
 layout: default
+title: "Horizon Blog"
 ---
-<h1>{{ "Horizon blog" }}</h1>
-<p>{{ page.date | date: "%Y-%m-%d" }}</p>
-<div class="content">
-  {{ content }}
+
+<h1>{{ page.title }}</h1>
+
+<!-- Blog Posts Loop -->
+<div class="posts">
+  {% for post in paginator.posts %}
+    <article class="post">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.date | date: "%Y-%m-%d" }}</p>
+      <div class="excerpt">
+        {{ post.excerpt }}
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">⬅ पिछला पेज</a>
+  {% endif %}
+
+  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">अगला पेज ➡</a>
+  {% endif %}
 </div>
