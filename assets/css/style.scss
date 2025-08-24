@@ -1,5 +1,97 @@
 ---
 ---
 
-@import "minima";   // Minima का default theme import
-@import "custom";   // आपकी custom dark theme style
+/* Minima theme import */
+@import "minima";
+
+/* 🌙 Custom Dark Theme */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+/* 🔗 Links */
+a {
+  color: #4dabf7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #82cfff;
+  text-decoration: underline;
+}
+
+/* 📰 Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid #4dabf7;
+  padding-bottom: 0.3rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #82cfff;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #a0e9ff;
+}
+
+/* 📌 Navbar */
+.site-header {
+  background: #1f1f1f;
+  border-bottom: 1px solid #333;
+  padding: 0.7rem 1rem;
+}
+
+.site-title, .site-nav a {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.site-nav a:hover {
+  color: #4dabf7 !important;
+}
+
+/* 📦 Blog Cards */
+.post {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* 🖼️ Images inside posts */
+.post img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 0.5rem 0;
+}
+
+/* 📄 Footer */
+.site-footer {
+  background: #1f1f1f;
+  color: #aaa;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
