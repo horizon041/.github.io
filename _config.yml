@@ -1,47 +1,53 @@
-# Site Info
+# 🌐 Site Settings
 title: "Horizon Blog"
-description: "An informational website for multitasking"
-author: "Rakesh Kumar"
-url: "https://horizon041.github.io"
-baseurl: "/sp"  # IMPORTANT for GitHub project site
+description: "News & Updates"
+url: "https://your-domain.com"   # 👉 यहाँ अपनी live साइट का URL डालें
+baseurl: ""                      # अगर subdirectory में है तो बदलें, जैसे "/blog"
 
-# Theme
+# 🎨 Theme
 theme: minima
 
-# Social
-twitter_username: your-horizon04
-github_username: horizon041
-linkedin_username: rakesh-kumar-555963d4
+# 📄 Author Info
+author:
+  name: "Horizon Team"
+  email: "contact@your-domain.com"
 
-# Build Settings
-permalink: pretty
-
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-# Pagination
+# 📑 Pagination Settings
 paginate: 5
 paginate_path: "/page:num/"
 
-# Exclude from build
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+# 🔌 Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
 
-# Defaults
+# 📰 Excerpt Settings
+excerpt_separator: "<!--more-->"   # पोस्ट में जहां तक preview दिखाना है
+
+# 🛠️ Defaults for Posts & Pages
 defaults:
   - scope:
-      path: ""
+      path: ""        # सभी फाइलों पर लागू
       type: "posts"
     values:
       layout: "post"
+      author: "Horizon Team"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 
-# Sass (only if you use it)
-# sass:
-#   sass_dir: _sass
+# 🗂️ Collections (अगर future में चाहें तो add कर सकते हैं)
+collections:
+  authors:
+    output: true
+
+# ✅ Markdown & Highlighter
+markdown: kramdown
+highlighter: rouge
+
+# ✅ Permalinks
+permalink: /:categories/:year/:month/:day/:title/
