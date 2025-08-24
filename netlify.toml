@@ -1,11 +1,11 @@
 [build]
-  command = "bundle install && bundle exec jekyll build"
+  command = "bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
   JEKYLL_ENV = "production"
-  RUBY_VERSION = "3.2.0"          # Ruby का latest stable use करें
-  BUNDLER_VERSION = "2.4.22"
+  RUBY_VERSION = "3.1.2"        # Netlify का stable supported Ruby
+  BUNDLER_VERSION = "2.4.22"    # वही version जो error में missing था
 
 [[redirects]]
   from = "/admin"
