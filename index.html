@@ -1,450 +1,50 @@
+---
+layout: default
+title: "Home"
+---
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Horizon - World's Best News & Entertainment Portal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="https://img.icons8.com/color/96/000000/horizon.png"/>
-  <style>
-    :root {
-      --main-bg: linear-gradient(120deg, #0f2027 0%, #2c5364 100%);
-      --glass-bg: rgba(255,255,255,0.09);
-      --glass-blur: blur(16px);
-      --border-glow: 0 0 14px #1fd1f9, 0 0 3px #fff;
-      --primary: #1fd1f9;
-      --accent: #ff7eb3;
-      --highlight: #50e3c2;
-      --text-main: #e4e6eb;
-      --text-dark: #181a25;
-      --card-shadow: 0 6px 36px #1fd1f955;
-    }
-    body {
-      margin: 0;
-      font-family: 'Roboto', Arial, sans-serif;
-      background: var(--main-bg);
-      color: var(--text-main);
-      min-height: 100vh;
-    }
-    header {
-      background: rgba(34, 193, 195, 0.45);
-      backdrop-filter: blur(8px);
-      padding: 28px 0 16px 0;
-      text-align: center;
-      box-shadow: 0 2px 18px #1fd1f999;
-      border-bottom: 2px solid #fff2;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-    }
-    .logo img {https://ik.imagekit.io/2moacns5y/IMG_20250521_141921.jpg?updatedAt=1755035368159}
-      height: 60px;
-      border-radius: 18px;
-      box-shadow: 0 2px 14px #fff4;
-      background: #fff;
-      padding: 4px;
-      border: 2px solid var(--primary);
-      animation: pop 1s cubic-bezier(.26,.53,.74,1.48);
-    }
-    @keyframes pop {
-      0% { transform: scale(0.1);}
-      80% { transform: scale(1.15);}
-      100% { transform: scale(1);}
-    }
-    .logo span {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: #fff;
-      letter-spacing: 3px;
-      text-shadow: 2px 2px 24px #1fd1f9a0;
-    }
-    nav {
-      margin: 20px 0 0 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      z-index: 2;
-      position: relative;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 700;
-      font-size: 1.08rem;
-      padding: 10px 22px;
-      border-radius: 28px;
-      transition: background 0.22s, color 0.22s, box-shadow 0.18s;
-      <div class="post">
-  <div class="post-content hindi" style="display:;">
-    <h2>पोस्ट का शीर्षक (हिंदी)</h2>
-    <p>यहाँ हिंदी में पोस्ट का कंटेंट है।</p>
-  </div>
-  <div class="post-content english" style="display:none;">
-    <h2>Post Title (English)</h2>
-    <p>This is the post content in English.</p>
-  </div>
-  <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
-</div>
-      background: rgba(255,255,255,0.05);
-      box-shadow: 0 2px 12px #1fd1f911;
-      border: 1.5px solid transparent;
-    }
-    nav a:hover, nav a.active {
-      background: var(--primary);
-      color: var(--text-dark);
-      box-shadow: 0 2px 14px #1fd1f9c0;
-      border: 1.5px solid #fff4;
-      letter-spacing: 1px;
-    }
-    .hero {
-      max-width: 1100px;
-      margin: 42px auto 0;
-      padding: 38px 16px 38px 16px;
-      border-radius: 30px;
-      background: var(--glass-bg);
-      box-shadow: var(--card-shadow);
-      backdrop-filter: var(--glass-blur);
-      border: 1.5px solid #fff3;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero:before {
-      content: '';
-      position: absolute;
-      left: -230px;
-      top: -60px;
-      width: 420px;
-      height: 180px;
-      background: linear-gradient(90deg,#ff7eb3 0%, #1fd1f9 100%);
-      z-index: 0;
-      filter: blur(90px);
-      opacity: .5;
-      pointer-events: none;
-      border-radius: 50%;
-    }
-    .hero h1 {
-      font-size: 2.6rem;
-      color: var(--primary);
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 12px;
-      margin-top: 0;
-      z-index: 1;
-      position: relative;
-      text-shadow: 0 2px 24px var(--primary);
-    }
-    .hero p {
-      font-size: 1.13rem;
-      color: #fff;
-      margin-bottom: 12px;
-      z-index: 1;
-      position: relative;
-    }
-    .hero .hero-btn {
-      margin-top: 14px;
-      padding: 12px 36px;
-      font-size: 1.1rem;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff7eb3, #1fd1f9 80%);
-      color: #191c2b;
-      border: none;
-      border-radius: 28px;
-      box-shadow: 0 4px 24px #1fd1f988;
-      cursor: pointer;
-      transition: background 0.22s, color 0.18s, transform 0.16s;
-      outline: none;
-    }
-    .hero .hero-btn:hover {
-      background: linear-gradient(90deg, #1fd1f9, #ff7eb3 80%);
-      color: #fff;
-      transform: scale(1.05);
-    }
-    .sections {
-      max-width: 1200px;
-      margin: 42px auto 0;
-      padding: 0 12px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 38px;
-    }
-    @media (max-width: 900px) {
-      .sections {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-    }
-    .col {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
-    .section-title {
-      font-size: 1.35rem;
-      color: var(--accent);
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      font-family: 'Montserrat', sans-serif;
-      text-shadow: 0 2px 14px #ff7eb355;
-    }
-    .card-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    @media (max-width: 700px) {
-      .card-list {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 { font-size: 1.45rem;}
-      .sections { padding: 0 2px;}
-    }
-    .card {
-      background: var(--glass-bg);
-      backdrop-filter: var(--glass-blur);
-      border-radius: 20px;
-      padding: 14px 13px 18px 13px;
-      box-shadow: 0 2px 14px #1fd1f935;
-      border: 1.5px solid #fff2;
-      min-height: 190px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.18s, box-shadow 0.18s;
-    }
-    .card:hover {
-      transform: translateY(-7px) scale(1.03);
-      box-shadow: 0 8px 32px #ff7eb333, 0 2px 14px #1fd1f9cc;
-      border: 1.5px solid var(--primary);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 14px;
-      margin-bottom: 7px;
-      object-fit: cover;
-      min-height: 70px;
-      max-height: 108px;
-      background: #fff;
-      box-shadow: 0 2px 12px #1fd1f945;
-    }
-    .card-title {
-      color: var(--primary);
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 0.5px;
-    }
-    .card-desc {
-      color: #fff;
-      font-size: 0.99rem;
-      margin-bottom: 7px;
-    }
-    .card a {
-      color: var(--accent);
-      text-decoration: underline;
-      font-weight: 500;
-      font-size: 0.99rem;
-      transition: color 0.18s;
-    }
-    .card a:hover { color: var(--highlight);}
-    /* Custom/Trending Section */
-    .trending, .editors, .quote, .subscribe {
-      background: var(--glass-bg);
-      border-radius: 24px;
-      padding: 18px;
-      box-shadow: 0 2px 16px #ff7eb322;
-      border: 1.5px solid #fff2;
-      margin-bottom: 18px;
-      position: relative;
-      text-align: center;
-      backdrop-filter: var(--glass-blur);
-    }
-    .trending-title {
-      color: var(--highlight);
-      font-size: 1.23rem;
-      font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-    .trending-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 6px;
-    }
-    .trending-item {
-      background: linear-gradient(90deg, #ff7eb3, #1fd1f9 77%);
-      color: #191c2b;
-      padding: 6px 16px;
-      border-radius: 18px;
-      font-weight: bold;
-      font-size: 1.01rem;
-      margin-bottom: 2px;
-      box-shadow: 0 2px 8px #ff7eb355;
-      transition: background 0.16s, color 0.16s;
-      cursor: pointer;
-    }
-    .trending-item:hover {
-      background: linear-gradient(90deg, #1fd1f9, #ff7eb3 77%);
-      color: #fff;
-    }
-    /* Editor's Pick */
-    .editors-title {
-      color: var(--accent);
-      font-size: 1.14rem;
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 7px;
-      letter-spacing: 1px;
-    }
-    .editors-pick {
-      color: #fff;
-      font-size: 1rem;
-      font-family: 'Roboto', sans-serif;
-      margin-bottom: 2px;
-    }
-    .editors-link {
-      color: var(--highlight);
-      font-weight: bold;
-      text-decoration: underline;
-      font-size: 1rem;
-      transition: color 0.14s;
-    }
-    .editors-link:hover { color: var(--primary);}
-    /* Quote */
-    .quote-content {
-      font-style: italic;
-      color: #fff;
-      font-size: 1.13rem;
-      margin-bottom: 6px;
-      text-shadow: 0 1px 8px #1fd1f966;
-    }
-    .quote-author {
-      color: var(--primary);
-      font-size: 1rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-    /* Subscribe */
-    .subscribe-title {
-      color: var(--primary);
-      font-size: 1.19rem;
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 8px;
-    }
-    .subscribe-form {
-      display: flex;
-      justify-content: center;
-      gap: 7px;
-      margin-top: 7px;
-    }
-    .subscribe-input {
-      padding: 9px 17px;
-      border-radius: 24px;
-      border: 1.5px solid #fff5;
-      font-size: 1rem;
-      outline: none;
-      background: rgba(255,255,255,0.07);
-      color: #fff;
-      width: 58%;
-      transition: border 0.18s;
-    }
-    .subscribe-input:focus { border: 1.5px solid var(--primary);}
-    .subscribe-btn {
-      padding: 10px 24px;
-      border: none;
-      border-radius: 24px;
-      background: linear-gradient(90deg, #ff7eb3, #1fd1f9 80%);
-      color: var(--text-dark);
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.18s, color 0.14s;
-    }
-    .subscribe-btn:hover {
-      background: linear-gradient(90deg, #1fd1f9, #ff7eb3 80%);
-      color: #fff;
-    }
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 30px 0 18px 0;
-      color: #abb0c5;
-      font-size: 1rem;
-      background: none;
-      margin-top: 40px;
-      border-top: 1.5px solid #fff2;
-      letter-spacing: 0.8px;
-    }
-    .footer a {
-      color: #b388ff;
-      margin-left: 14px;
-      text-decoration: underline;
-      font-size: 1rem;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      .logo span { font-size: 1.15rem;}
-      .hero { padding: 20px 4px;}
-      .sections { gap: 14px;}
-      .col { gap: 18px;}
-      .card { min-height: 120px;}
-      .subscribe-form { flex-direction: column; gap: 8px;}
-      .subscribe-input { width: 96%;}
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+
   <header>
-    <div class="logo">
-      <img src="https://img.icons8.com/color/96/000000/horizon.png" alt="Horizon Logo"/>
-      <span>Horizon</span>
-    </div>
-    <nav>
-      <a href="#" class="active">होम</a>
-      <a href="#">न्यूज़</a>
-      <a href="#">ब्लॉग</a>
-      <a href="#">स्पोर्ट्स</a>
-      <a href="#">एंटरटेनमेंट</a>
-      <a href="#">लेटेस्ट अपडेट</a>
-      <a href="#">हमसे संपर्क</a>
-    </nav>
+    <h1>Horizon - News & Blogs</h1>
   </header>
-  <div class="hero">
-    <h1>Welcome to the World's Best News & Entertainment Portal, Horizon!</h1>
-    <p>लेटेस्ट न्यूज़, ट्रेंडिंग स्पोर्ट्स, एंटरटेनमेंट, ब्लॉग्स और बहुत कुछ — अब एक जगह, एक नए अंदाज़ में!</p>
-    <button class="hero-btn">अब पढ़ना शुरू करें</button>
-  </div>
-  <div class="sections">
-    <div class="col">
-      <!-- Trending Section -->
-      <div class="trending">
-        <div class="trending-title">🔥 Trending</div>
-        <div class="trending-list">
-          <div class="trending-item">AI & Tech</div>
-          <div class="trending-item">Cricket World Cup</div>
-          <div class="trending-item">Bollywood Buzz</div>
-          <div class="trending-item">Stocks</div>
-          <div class="trending-item">Python Tips</div>
-        </div>
-      </div>
-      <!-- News Section -->
-      <div>
-        <div class="section-title">न्यूज़</div>
-        <div class="card-list">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Tech News"/>
-            <div class="card-title">तकनीक की दुनिया में क्या नया?</div>
-            <div class="card-desc">लेटेस्ट टेक्न
-<article class="post">
-    <h2><a href="/posts/new-post.html">ताजा खबर</a></h2>
-    <p>आज क्या हुआ</p>
-</article>
+
+  <main>
+    <!-- Blog Posts Loop -->
+    <div class="posts">
+      {% for post in paginator.posts %}
+        <article class="post">
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt }}</p>
+        </article>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">⬅ पिछला पेज</a>
+      {% endif %}
+
+      <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}">अगला पेज ➡</a>
+      {% endif %}
+    </div>
+  </main>
+
+  <footer>
+    <p>© {{ site.time | date: "%Y" }} Horizon News</p>
+  </footer>
+
+</body>
+</html>
