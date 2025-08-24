@@ -1,3 +1,9 @@
+---
+layout: home
+title: "Horizon Blog"
+permalink: /
+---
+
 <style>
 body {
   background: #18192a;
@@ -86,9 +92,8 @@ a:hover {
 <span class="sub-link"><a href="#latest">लेटेस्ट न्यूज़, ब्लॉग, ऑफर्स और संपर्क</a></span>
 
 <div class="section-title">स्वागत है <span style="color:#3498fb">Horizon</span> पर!</div>
-लेटेस्ट न्यूज़, टेक रिव्यू, और गाइड्स।
-[Amazon पर खरीदें](https://amazon.in) |
-[हमें सपोर्ट करें](#support)
+लेटेस्ट न्यूज़, टेक रिव्यू, और गाइड्स।  
+[Amazon पर खरीदें](https://amazon.in) | [हमें सपोर्ट करें](#support)
 
 <div id="latest" class="section-title">लेटेस्ट न्यूज़ और ब्लॉग</div>
 
@@ -109,7 +114,7 @@ a:hover {
 
 <div class="section-title">Python सीखने के टिप्स</div>
 <div class="card">
-  कोडिंग शुरू करने के लिए गाइड।
+  कोडिंग शुरू करने के लिए गाइड।  
   <a href="https://www.amazon.in/s?k=python+book" target="_blank">Python बुक खरीदें</a>.<br>
   <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Python Book">
   <ul style="margin:13px 0 0 18px;">
