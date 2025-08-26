@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Dark gradient from second snippet */
-  color: #fff; /* Default to white for dark theme */
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -17,6 +17,13 @@ body {
   max-width: 1200px;
   margin: 32px auto;
   padding: 0 18px;
+  display: flex;
+  gap: 2rem;
+}
+
+.section {
+  padding: 20px;
+  width: 100%;
 }
 
 /* Header and Footer Styles */
@@ -67,9 +74,9 @@ body {
   margin: 0 10px;
 }
 
-/* Custom Header Styles */
+/* Custom Header Styles (Overridden by Default Layout) */
 .header {
-  background: #234e70; /* From first snippet */
+  background: #234e70;
   color: #fff;
   padding: 22px 0 16px 0;
   text-align: center;
@@ -83,7 +90,7 @@ body {
 }
 
 .nav {
-  background: #fa7d09; /* From first snippet */
+  background: #fa7d09;
   padding: 8px 0;
   text-align: center;
 }
@@ -96,13 +103,7 @@ body {
   font-weight: bold;
 }
 
-/* Section and Tabs Styles */
-.section {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Tabs and Content Styles */
 .tabs {
   display: flex;
   gap: 10px;
@@ -110,7 +111,7 @@ body {
 }
 
 .tab {
-  background-color: #4b0082; /* From second snippet */
+  background-color: #4b0082;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
@@ -127,18 +128,18 @@ body {
 
 /* Content Card Styles */
 .content-card {
-  background-color: rgba(255, 255, 255, 0.1); /* From second snippet */
-  padding: 22px; /* Adjusted from first snippet */
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 22px;
   border-radius: 10px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08); /* Added from first snippet */
-  transition: transform 0.19s; /* Added from first snippet */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  transition: transform 0.19s;
 }
 
 .content-card:hover {
-  transform: translateY(-4px) scale(1.03); /* From first snippet */
+  transform: translateY(-4px) scale(1.03);
 }
 
 .content-card img {
@@ -148,93 +149,142 @@ body {
   border-radius: 10px;
 }
 
-/* News Grid Styles */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 26px;
+/* Blog Post Styles */
+.blog-post {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(63,81,181,0.07);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  transition: transform 0.2s;
+  color: #333; /* Adjusted for light background */
 }
 
-.news-card {
-  background: #fff; /* From first snippet, adjusted for contrast */
-  padding: 22px;
-  border-radius: 10px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  transition: transform 0.19s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #232b2b; /* From first snippet */
+.blog-post:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 4px 16px rgba(63,81,181,0.13);
 }
 
-.news-card:hover {
-  transform: translateY(-4px) scale(1.03);
+.blog-post h2 {
+  margin-top: 0;
+  color: #3f51b5;
 }
 
-.news-category {
-  display: inline-block;
-  background: #234e70;
-  color: #fff;
-  border-radius: 6px;
-  padding: 3px 10px;
-  font-size: 0.98em;
-  margin-bottom: 10px;
-}
-
-.news-title {
-  font-size: 1.25em;
-  color: #fa7d09;
-  margin: 7px 0 10px 0;
-  font-weight: bold;
+.blog-post h2 a {
+  color: #3f51b5;
   text-decoration: none;
 }
 
-.news-meta {
-  font-size: 0.98em;
-  color: #555;
-  margin-bottom: 8px;
+.blog-post .meta {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
-.news-desc {
-  color: #232b2b;
-  margin-bottom: 14px;
+.blog-post p {
+  line-height: 1.7;
 }
 
-.read-more {
-  color: #234e70;
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 1em;
+/* Sidebar Styles */
+aside {
+  flex: 0 0 250px;
+  background: rgba(255, 255, 255, 0.1); /* Adjusted for dark theme */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(63,81,181,0.07);
+  padding: 1.5rem 1rem;
+  height: fit-content;
 }
 
-/* Post Styles */
-.post {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 28px;
-  background: #21243b; /* From first snippet */
-  border-radius: 18px;
-  box-shadow: 0 6px 24px #10122333;
-  color: #fff; /* Adjusted for dark background */
+aside h3 {
+  margin-top: 0;
+  color: #ffca28; /* Adjusted for contrast */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
 }
 
-.lang-switch-btn {
-  margin-top: 18px;
-  padding: 10px 25px;
-  background: linear-gradient(90deg, #1fd1f9, #ff7eb3 80%);
-  color: #191c2b;
-  border-radius: 24px;
-  border: none;
-  font-weight: bold;
-  font-size: 1.07rem;
-  cursor: pointer;
-  transition: background 0.17s, color 0.17s;
-  outline: none;
+aside ul {
+  list-style: none;
+  padding: 0;
 }
 
-.lang-switch-btn:hover {
-  background: linear-gradient(90deg, #ff7eb3, #1fd1f9 80%);
+aside ul li {
+  margin-bottom: 0.5rem;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #ffca28; /* Adjusted for contrast */
+  transition: color 0.2s;
+}
+
+aside ul li a:hover {
   color: #fff;
+}
+
+.sidebar-toggle {
+  display: none;
+  background: #ffca28;
+  color: #283593;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+aside.active {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  aside {
+    display: none;
+    width: 100%;
+    order: 2;
+  }
+
+  main {
+    order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  nav .logo {
+    font-size: 1.2rem;
+  }
+
+  aside {
+    padding: 1rem 0.5rem;
+  }
+
+  .blog-post {
+    padding: 1rem;
+  }
+
+  .content-card {
+    padding: 12px;
+  }
 }
 
 /* Adsense Placeholder */
@@ -246,7 +296,7 @@ body {
   line-height: 100px;
 }
 
-/* Hero Styles */
+/* Hero Styles (Optional, if needed) */
 .hero {
   text-align: center;
   padding: 50px;
@@ -269,27 +319,4 @@ body {
   color: white;
   font-size: 1em;
   cursor: pointer;
-}
-
-/* Posts and Pagination */
-.posts {
-  margin-top: 20px;
-}
-
-.post h2 a {
-  color: #00ffff;
-  text-decoration: none;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-/* Media Query */
-@media (max-width: 650px) {
-  .container { padding: 0 5px; }
-  .news-card { padding: 12px; }
-  .content-card { padding: 12px; }
 }
