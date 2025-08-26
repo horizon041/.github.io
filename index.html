@@ -1,50 +1,120 @@
 ---
 layout: default
-title: "Home"
+title: "होम"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
+<section class="hero">
+  <h1>विश्व के सर्वश्रेष्ठ समाचार और मनोरंजन पोर्टल में आपका स्वागत है, Horizon!</h1>
+  <p>लेटेस्ट न्यूज, ट्रेंडिंग स्पोर्ट्स, एंटरटेनमेंट ब्लॉग्स और बहुत कुछ - अब एक जगह, एक नजर में!</p>
+  <button>अब पढ़ना शुरू करें</button>
+</section>
 
-  <header>
-    <h1>Horizon - News & Blogs</h1>
-  </header>
+<section id="trending" class="section">
+  <h2>ट्रेंडिंग</h2>
+  <div class="tabs">
+    <div class="tab" onclick="openTab('trending', 'all')">सभी</div>
+    <div class="tab" onclick="openTab('trending', 'stocks')">स्टॉक्स</div>
+    <div class="tab" onclick="openTab('trending', 'bollywood')">बॉलीवुड बज़</div>
+    <div class="tab" onclick="openTab('trending', 'ai-tech')">AI और तकनीक</div>
+  </div>
+  <div id="trending-all" class="content active">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ट्रेंडिंग आइटम 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ट्रेंडिंग आइटम 2</div>
+  </div>
+  <div id="trending-stocks" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">स्टॉक्स अपडेट 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">स्टॉक्स अपडेट 2</div>
+  </div>
+  <div id="trending-bollywood" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">बॉलीवुड न्यूज 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">बॉलीवुड न्यूज 2</div>
+  </div>
+  <div id="trending-ai-tech" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">AI टेक 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">AI टेक 2</div>
+  </div>
+  <div class="adsense-placeholder">यहाँ Adsense विज्ञापन</div>
+</section>
 
-  <main>
-    <!-- Blog Posts Loop -->
-    <div class="posts">
-      {% for post in paginator.posts %}
-        <article class="post">
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          <p>{{ post.excerpt }}</p>
-        </article>
-      {% endfor %}
-    </div>
+<section id="study" class="section">
+  <h2>अध्ययन</h2>
+  <div class="tabs">
+    <div class="tab" onclick="openTab('study', 'cafe')">कैफे</div>
+    <div class="tab" onclick="openTab('study', 'competitive')">प्रतियोगी परीक्षा</div>
+    <div class="tab" onclick="openTab('study', 'board')">बोर्ड परीक्षा</div>
+    <div class="tab" onclick="openTab('study', 'digital')">डिजिटल ज्ञान</div>
+    <div class="tab" onclick="openTab('study', 'ai')">AI</div>
+  </div>
+  <div id="study-cafe" class="content active">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">कैफे संसाधन 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">कैफे संसाधन 2</div>
+  </div>
+  <div id="study-competitive" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">प्रतियोगी परीक्षा 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">प्रतियोगी परीक्षा 2</div>
+  </div>
+  <div id="study-board" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">बोर्ड परीक्षा 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">बोर्ड परीक्षा 2</div>
+  </div>
+  <div id="study-digital" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">डिजिटल ज्ञान 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">डिजिटल ज्ञान 2</div>
+  </div>
+  <div id="study-ai" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">AI अध्ययन 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">AI अध्ययन 2</div>
+  </div>
+  <div class="adsense-placeholder">यहाँ Adsense विज्ञापन</div>
+</section>
 
-    <!-- Pagination -->
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}">⬅ पिछला पेज</a>
-      {% endif %}
+<section id="online-workshop" class="section">
+  <h2>ऑनलाइन कार्यशाला</h2>
+  <div class="tabs">
+    <div class="tab" onclick="openTab('workshop', 'website')">वेबसाइट बिल्डर</div>
+    <div class="tab" onclick="openTab('workshop', 'freelancing')">फ्रीलांसिंग कार्य</div>
+    <div class="tab" onclick="openTab('workshop', 'affiliate')">अफिलिएट</div>
+    <div class="tab" onclick="openTab('workshop', 'dropshipping')">ड्रॉप शिपिंग</div>
+  </div>
+  <div id="workshop-website" class="content active">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">वेबसाइट बिल्डर 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">वेबसाइट बिल्डर 2</div>
+  </div>
+  <div id="workshop-freelancing" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">फ्रीलांसिंग 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">फ्रीलांसिंग 2</div>
+  </div>
+  <div id="workshop-affiliate" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">अफिलिएट 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">अफिलिएट 2</div>
+  </div>
+  <div id="workshop-dropshipping" class="content">
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ड्रॉप शिपिंग 1</div>
+    <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ड्रॉप शिपिंग 2</div>
+  </div>
+  <div class="adsense-placeholder">यहाँ Adsense विज्ञापन</div>
+</section>
 
-      <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+<!-- Blog Posts Section -->
+<main>
+  <div class="posts">
+    {% for post in paginator.posts %}
+      <article class="post">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt }}</p>
+      </article>
+    {% endfor %}
+  </div>
 
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}">अगला पेज ➡</a>
-      {% endif %}
-    </div>
-  </main>
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}">⬅ पिछला पेज</a>
+    {% endif %}
 
-  <footer>
-    <p>© {{ site.time | date: "%Y" }} Horizon News</p>
-  </footer>
+    <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
-</body>
-</html>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}">अगला पेज ➡</a>
+    {% endif %}
+  </div>
+</main>
