@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title }} | Horizon Blog</title>
+  <meta name="description" content="Horizon Blog - News, Blogs, Sports, Entertainment, Study, Workshops and more.">
+  <meta name="keywords" content="Horizon Blog, News, Sports, Entertainment, AI, Tech, Study, Online Workshop">
+  <meta name="author" content="Horizon Team">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ page.title }} | Horizon Blog">
+  <meta property="og:description" content="Explore News, Blogs, Sports, Entertainment, AI & Tech, Study, and more on Horizon Blog.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/images/preview.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }} | Horizon Blog">
+  <meta name="twitter:description" content="Stay updated with trending news, blogs, and knowledge with Horizon Blog.">
+  <meta name="twitter:image" content="{{ site.url }}/images/preview.png">
+
+  <!-- SEO Tags -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="stylesheet" href="/assets/css/default.css">
+
+  <!-- Google Analytics (placeholder) -->
+  <!-- Replace UA-XXXXX-Y with your own Analytics ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXX-Y');
+  </script>
+
+  <!-- Google Adsense (placeholder) -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXX"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</head>
+<body>
+
+  <!-- 🌐 HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo"><a href="{{ '/' | relative_url }}">🌍 Horizon</a></h1>
+      <nav class="navbar">
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">All</a></li>
+          <li><a href="/news.html">News</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/sports.html">Sports</a></li>
+          <li><a href="/entertainment.html">Entertainment</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 📌 MAIN CONTENT -->
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  <!-- 🔻 FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ site.time | date: '%Y' }} Horizon Blog. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="/about.html">About</a> | 
+        <a href="/privacy.html">Privacy</a> | 
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
