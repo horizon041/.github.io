@@ -1,282 +1,150 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>समाचार - Horizon </title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-            color: #232b2b;
-        }
-        .header {
-            background: #234e70;
-            color: #fff;
-            padding: 22px 0 16px 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2.3em;
-            letter-spacing: 1px;
-        }
-        .nav {
-            background: #fa7d09;
-            padding: 8px 0;
-            text-align: center;
-        }
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 18px;
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 1050px;
-            margin: 32px auto;
-            padding: 0 18px;
-        }
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 26px;
-        }
-        .news-card {
-            background: #fff;
-            padding: 22px;
-            border-radius: 10px;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-            transition: transform 0.19s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .news-card:hover {
-            transform: translateY(-4px) scale(1.03);
-        }
-        .news-category {
-            display: inline-block;
-            background: #234e70;
-            color: #fff;
-            border-radius: 6px;
-            padding: 3px 10px;
-            font-size: 0.98em;
-            margin-bottom: 10px;
-        }
-        .news-title {
-            font-size: 1.25em;
-            color: #fa7d09;
-            margin: 7px 0 10px 0;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .news-meta {
-            font-size: 0.98em;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        .news-desc {
-            color: #232b2b;
-            margin-bottom: 14px;
-        }
-        .read-more {
-            color: #234e70;
-            font-weight: bold;
-            text-decoration: underline;
-            font-size: 1em;
-        }
-        @media (max-width: 650px) {
-            .container { padding: 0 5px; }
-            .news-card { padding: 12px; }
-        }
-    </style>
-</head>
-<body>
+---
+layout: default
+title: "समाचार"
+---
 
-    <div class="header">
-        <h1>Horizon </h1>
-        <p>हर क्षेत्र की ताजा और विश्वसनीय खबरें एक ही जगह</p>
-    </div>
-    <div class="nav">
-        <a href="news.html">Update</a>
-        <a href="blog.html">ब्लॉग</a>
-        <a href="entertainment.html">मनोरंजन</a>
-        <a href="sports.html">खेल</a>
-        <a href="about.html">हमारे बारे में</a>
-    </div>
+<!-- Header from second snippet -->
+<div class="header">
+  <h1>Horizon</h1>
+  <p>हर क्षेत्र की ताजा और विश्वसनीय खबरें एक ही जगह</p>
+</div>
+<div class="nav">
+  <a href="news.html">Update</a>
+  <a href="blog.html">ब्लॉग</a>
+  <a href="entertainment.html">मनोरंजन</a>
+  <a href="sports.html">खेल</a>
+  <a href="about.html">हमारे बारे में</a>
+</div>
 
-    <div class="container">
-        <div class="news-grid">
-            <!-- राष्ट्रीय समाचार -->
-            <div class="news-card">
-                <span class="news-category">राष्ट्रीय</span>
-                <a class="news-title" href="#">सरकार ने नई शिक्षा नीति लागू की, छात्रों के लिए अवसरों में वृद्धि</a>
-                <div class="news-meta">12 अगस्त 2025 | </div>
-                <div class="news-desc">नई शिक्षा नीति से देशभर के छात्रों को बेहतर शिक्षा और रोजगार के अवसर मिलेंगे। जानें इस नीति के मुख्य बिंदु और इसका असर।</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-            <!-- अंतरराष्ट्रीय समाचार -->
-            <div class="news-card">
-                <span class="news-category">अंतरराष्ट्रीय</span>
-                <a class="news-title" href="#">G20 सम्मेलन में भारत की अहम भूमिका, वैश्विक मुद्दों पर चर्चा</a>
-                <div class="news-meta">12 अगस्त 2025 | </div>
-                <div class="news-desc">G20 शिखर सम्मेलन में भारत ने वैश्विक अर्थव्यवस्था, पर्यावरण और सुरक्षा पर महत्वपूर्ण सुझाव दिए।</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-            <!-- बिजनेस -->
-            <div class="news-card">
-                <span class="news-category">व्यापार</span>
-                <a class="news-title" href="#">शेयर बाजार में उछाल, सेंसेक्स नई ऊँचाई पर</a>
-                <div class="news-meta">12 अगस्त 2025 | </div>
-                <div class="news-desc">आज शेयर बाजार में जबरदस्त तेजी देखी गई, निवेशकों के लिए यह समय कैसा रहेगा?</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-            <!-- टेक्नोलॉजी -->
-            <div class="news-card">
-                <span class="news-category">टेक्नोलॉजी</span>
-                <a class="news-title" href="#">AI में भारत की प्रगति, स्टार्टअप्स को नया मंच</a>
-                <div class="news-meta">12 अगस्त 2025 | </div>
-                <div class="news-desc">आर्टिफिशियल इंटेलिजेंस के क्षेत्र में भारत के स्टार्टअप्स ने नया मुकाम हासिल किया।</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-            <!-- स्वास्थ्य -->
-            <div class="news-card">
-                <span class="news-category">स्वास्थ्य</span>
-                <a class="news-title" href="#">फिटनेस ट्रेंड: युवाओं के बीच योग और मेडिटेशन की बढ़ती लोकप्रियता</a>
-                <div class="news-meta">12 अगस्त 2025 | </div>
-                <div class="news-desc">योग एवं मेडिटेशन अब युवाओं की दिनचर्या का हिस्सा बनते जा रहे हैं। जानिए इसके लाभ।</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-            <!-- विज्ञान -->
-            <div class="news-card">
-                <span class="news-category">विज्ञान</span>
-                <a class="news-title" href="#">चंद्रयान-4: भारत का अगला बड़ा मिशन</a>
-                <div class="news-meta">12 अगस्त 2025 | रिपोर्टर: </div>
-                <div class="news-desc">ISRO ने चंद्रयान-4 मिशन की घोषणा की, जानिए इसकी खास बातें और महत्व।</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-            <!-- अन्य खबरें -->
-            <div class="news-card">
-                <span class="news-category">मनोरंजन</span>
-                <a class="news-title" href="#">फिल्म 'अद्भुत' का ट्रेलर रिलीज, दर्शकों में उत्साह</a>
-                <div class="news-meta">12 अगस्त 2025 | </div>
-                <div class="news-desc">बॉलीवुड की नई फिल्म 'अद्भुत' का ट्रेलर हुआ रिलीज, जानिए फिल्म की कहानी और कास्ट।</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-            <div class="news-card">
-                <span class="news-category">खेल</span>
-                <a class="news-title" href="#">ओलंपिक 2025: भारत ने जीते 8 स्वर्ण पदक</a>
-                <div class="news-meta">12 अगस्त 2025 | </div>
-                <div class="news-desc">ओलंपिक में भारतीय खिलाड़ियों ने रचा इतिहास, जानिए कौन-कौन बने चैम्पियन।</div>
-                <a class="read-more" href="#">और पढ़ें...</a>
-            </div>
-        </div>
+<div class="container">
+  <!-- News Grid from second snippet -->
+  <div class="news-grid">
+    <!-- राष्ट्रीय समाचार -->
+    <div class="news-card">
+      <span class="news-category">राष्ट्रीय</span>
+      <a class="news-title" href="#">सरकार ने नई शिक्षा नीति लागू की, छात्रों के लिए अवसरों में वृद्धि</a>
+      <div class="news-meta">12 अगस्त 2025 | </div>
+      <div class="news-desc">नई शिक्षा नीति से देशभर के छात्रों को बेहतर शिक्षा और रोजगार के अवसर मिलेंगे। जानें इस नीति के मुख्य बिंदु और इसका असर।</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
     </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <title>Update - Horizon</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .post {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 28px;
-      background: #21243b;
-      border-radius: 18px;
-      box-shadow: 0 6px 24px #10122333;
-    }
-    .lang-switch-btn {
-      margin-top: 18px;
-      padding: 10px 25px;
-      background: linear-gradient(90deg, #1fd1f9, #ff7eb3 80%);
-      color: #191c2b;
-      border-radius: 24px;
-      border: none;
-      font-weight: bold;
-      font-size: 1.07rem;
-      cursor: pointer;
-      transition: background 0.17s, color 0.17s;
-      outline: none;
-    }
-    .lang-switch-btn:hover {
-      background: linear-gradient(90deg, #ff7eb3, #1fd1f9 80%);
-      color: #fff;
-    }
-    h2 { margin-bottom: 8px; }
-    p { margin-top: 0; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1 style="text-align:center; color:#1fd1f9; margin-top:32px;">लेटेस्ट न्यूज़ / Latest News</h1>
-  </header>
-
-  <!-- Example News Post 1 -->
-  <div class="post">
-    <div class="post-content hindi" style="display:;">
-      <h2>बिहार में बाढ़: जनजीवन प्रभावित</h2>
-      <p>लगातार बारिश के कारण बिहार के कई जिलों में बाढ़ आ गई है। प्रशासन राहत कार्य में जुटा है।</p>
+    <!-- अंतरराष्ट्रीय समाचार -->
+    <div class="news-card">
+      <span class="news-category">अंतरराष्ट्रीय</span>
+      <a class="news-title" href="#">G20 सम्मेलन में भारत की अहम भूमिका, वैश्विक मुद्दों पर चर्चा</a>
+      <div class="news-meta">12 अगस्त 2025 | </div>
+      <div class="news-desc">G20 शिखर सम्मेलन में भारत ने वैश्विक अर्थव्यवस्था, पर्यावरण और सुरक्षा पर महत्वपूर्ण सुझाव दिए।</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
     </div>
-    <div class="post-content english" style="display:none;">
-      <h2>Flood in Bihar: Life Disrupted</h2>
-      <p>Due to continuous rains, several districts of Bihar are flooded. The administration is carrying out relief work.</p>
+    <!-- बिजनेस -->
+    <div class="news-card">
+      <span class="news-category">व्यापार</span>
+      <a class="news-title" href="#">शेयर बाजार में उछाल, सेंसेक्स नई ऊँचाई पर</a>
+      <div class="news-meta">12 अगस्त 2025 | </div>
+      <div class="news-desc">आज शेयर बाजार में जबरदस्त तेजी देखी गई, निवेशकों के लिए यह समय कैसा रहेगा?</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
     </div>
-    <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
+    <!-- टेक्नोलॉजी -->
+    <div class="news-card">
+      <span class="news-category">टेक्नोलॉजी</span>
+      <a class="news-title" href="#">AI में भारत की प्रगति, स्टार्टअप्स को नया मंच</a>
+      <div class="news-meta">12 अगस्त 2025 | </div>
+      <div class="news-desc">आर्टिफिशियल इंटेलिजेंस के क्षेत्र में भारत के स्टार्टअप्स ने नया मुकाम हासिल किया।</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
+    </div>
+    <!-- स्वास्थ्य -->
+    <div class="news-card">
+      <span class="news-category">स्वास्थ्य</span>
+      <a class="news-title" href="#">फिटनेस ट्रेंड: युवाओं के बीच योग और मेडिटेशन की बढ़ती लोकप्रियता</a>
+      <div class="news-meta">12 अगस्त 2025 | </div>
+      <div class="news-desc">योग एवं मेडिटेशन अब युवाओं की दिनचर्या का हिस्सा बनते जा रहे हैं। जानिए इसके लाभ।</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
+    </div>
+    <!-- विज्ञान -->
+    <div class="news-card">
+      <span class="news-category">विज्ञान</span>
+      <a class="news-title" href="#">चंद्रयान-4: भारत का अगला बड़ा मिशन</a>
+      <div class="news-meta">12 अगस्त 2025 | रिपोर्टर: </div>
+      <div class="news-desc">ISRO ने चंद्रयान-4 मिशन की घोषणा की, जानिए इसकी खास बातें और महत्व।</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
+    </div>
+    <!-- मनोरंजन -->
+    <div class="news-card">
+      <span class="news-category">मनोरंजन</span>
+      <a class="news-title" href="#">फिल्म 'अद्भुत' का ट्रेलर रिलीज, दर्शकों में उत्साह</a>
+      <div class="news-meta">12 अगस्त 2025 | </div>
+      <div class="news-desc">बॉलीवुड की नई फिल्म 'अद्भुत' का ट्रेलर हुआ रिलीज, जानिए फिल्म की कहानी और कास्ट।</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
+    </div>
+    <!-- खेल -->
+    <div class="news-card">
+      <span class="news-category">खेल</span>
+      <a class="news-title" href="#">ओलंपिक 2025: भारत ने जीते 8 स्वर्ण पदक</a>
+      <div class="news-meta">12 अगस्त 2025 | </div>
+      <div class="news-desc">ओलंपिक में भारतीय खिलाड़ियों ने रचा इतिहास, जानिए कौन-कौन बने चैम्पियन।</div>
+      <a class="read-more" href="#">और पढ़ें...</a>
+    </div>
   </div>
 
-  <!-- Example News Post 2 -->
-  <div class="post">
-    <div class="post-content hindi" style="display:;">
-      <h2>क्रिकेट वर्ल्ड कप: भारत ने पाकिस्तान को हराया</h2>
-      <p>भारत ने पाकिस्तान को रोमांचक मुकाबले में 5 विकेट से हरा दिया। विराट कोहली मैन ऑफ द मैच बने।</p>
-    </div>
-    <div class="post-content english" style="display:none;">
-      <h2>Cricket World Cup: India Beats Pakistan</h2>
-      <p>India defeated Pakistan by 5 wickets in a thrilling match. Virat Kohli was named Man of the Match.</p>
-    </div>
-    <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
-  </div>
+  <!-- Language Switch Posts from third snippet -->
+  <div class="container">
+    <header>
+      <h1 style="text-align:center; color:#1fd1f9; margin-top:32px;">लेटेस्ट न्यूज़ / Latest News</h1>
+    </header>
 
-  <!-- Example News Post 3 -->
-  <div class="post">
-    <div class="post-content hindi" style="display:;">
-      <h2>नई तकनीक: AI से बदलेगी शिक्षा</h2>
-      <p>आर्टिफिशियल इंटेलिजेंस के उपयोग से शिक्षा क्षेत्र में बड़े बदलाव आने वाले हैं।</p>
+    <!-- Example News Post 1 -->
+    <div class="post">
+      <div class="post-content hindi" style="display:;">
+        <h2>बिहार में बाढ़: जनजीवन प्रभावित</h2>
+        <p>लगातार बारिश के कारण बिहार के कई जिलों में बाढ़ आ गई है। प्रशासन राहत कार्य में जुटा है।</p>
+      </div>
+      <div class="post-content english" style="display:none;">
+        <h2>Flood in Bihar: Life Disrupted</h2>
+        <p>Due to continuous rains, several districts of Bihar are flooded. The administration is carrying out relief work.</p>
+      </div>
+      <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
     </div>
-    <div class="post-content english" style="display:none;">
-      <h2>New Technology: AI to Transform Education</h2>
-      <p>With the use of Artificial Intelligence, major changes are expected in the field of education.</p>
-    </div>
-    <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
-  </div>
 
-  <script>
-    function toggleLang(btn) {
-      const post = btn.closest('.post');
-      const hindiDiv = post.querySelector('.hindi');
-      const englishDiv = post.querySelector('.english');
-      if (hindiDiv.style.display !== "none") {
-        hindiDiv.style.display = "none";
-        englishDiv.style.display = "";
-        btn.innerText = "स्विच करें हिंदी में";
-      } else {
-        hindiDiv.style.display = "";
-        englishDiv.style.display = "none";
-        btn.innerText = "Switch to English";
+    <!-- Example News Post 2 -->
+    <div class="post">
+      <div class="post-content hindi" style="display:;">
+        <h2>क्रिकेट वर्ल्ड कप: भारत ने पाकिस्तान को हराया</h2>
+        <p>भारत ने पाकिस्तान को रोमांचक मुकाबले में 5 विकेट से हरा दिया। विराट कोहली मैन ऑफ द मैच बने।</p>
+      </div>
+      <div class="post-content english" style="display:none;">
+        <h2>Cricket World Cup: India Beats Pakistan</h2>
+        <p>India defeated Pakistan by 5 wickets in a thrilling match. Virat Kohli was named Man of the Match.</p>
+      </div>
+      <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
+    </div>
+
+    <!-- Example News Post 3 -->
+    <div class="post">
+      <div class="post-content hindi" style="display:;">
+        <h2>नई तकनीक: AI से बदलेगी शिक्षा</h2>
+        <p>आर्टिफिशियल इंटेलिजेंस के उपयोग से शिक्षा क्षेत्र में बड़े बदलाव आने वाले हैं।</p>
+      </div>
+      <div class="post-content english" style="display:none;">
+        <h2>New Technology: AI to Transform Education</h2>
+        <p>With the use of Artificial Intelligence, major changes are expected in the field of education.</p>
+      </div>
+      <button class="lang-switch-btn" onclick="toggleLang(this)">Switch to English</button>
+    </div>
+
+    <script>
+      function toggleLang(btn) {
+        const post = btn.closest('.post');
+        const hindiDiv = post.querySelector('.hindi');
+        const englishDiv = post.querySelector('.english');
+        if (hindiDiv.style.display !== "none") {
+          hindiDiv.style.display = "none";
+          englishDiv.style.display = "";
+          btn.innerText = "स्विच करें हिंदी में";
+        } else {
+          hindiDiv.style.display = "";
+          englishDiv.style.display = "none";
+          btn.innerText = "Switch to English";
+        }
       }
-    }
-  </script>
-</body>
-</html>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="/assets/css/styles.css">
+    </script>
+  </div>
+</div>
