@@ -3,37 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | Horizon</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
+  <title>{{ page.title | default: "Horizon" }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: 'Horizon - World\'s Best News & Entertainment Portal' }}">
   <meta name="keywords" content="news, blog, sports, entertainment, trending, study, workshop">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
   <!-- SEO and Open Graph -->
-  <meta property="og:title" content="{{ page.title }} | Horizon">
-  <meta property="og:description" content="{{ site.description }}">
-  <meta property="og:image" content="{{ site.url }}/images/logo.png">
+  <meta property="og:title" content="{{ page.title | default: 'Horizon' }}">
+  <meta property="og:description" content="{{ site.description | default: 'Horizon - World\'s Best News & Entertainment Portal' }}">
+  <meta property="og:image" content="{{ site.url | default: 'https://yourdomain.com' }}/images/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="canonical" href="{{ site.url | default: 'https://yourdomain.com' }}{{ page.url | default: '/' }}">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
-  </script>
+  <!-- Google Analytics (कंडीशनल लोड) -->
+  {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}');
+    </script>
+  {% endif %}
 
-  <!-- Adsense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>
+  <!-- Adsense (कंडीशनल लोड) -->
+  {% if site.adsense_client %}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>
+  {% endif %}
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <img src="/images/logo.png" alt="Horizon Logo" class="logo">
+      <img src="/images/logo.png" alt="Horizon Logo" class="logo" onerror="this.style.display='none';"> <!-- फॉल्बैक अगर इमेज न मिले -->
       <nav>
         <ul>
-          <li><a href="/">All</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/news.html">News</a></li>
           <li><a href="/blog.html">Blog</a></li>
           <li><a href="/sports.html">Sports</a></li>
