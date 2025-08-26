@@ -1,64 +1,21 @@
-# 🌐 Site Settings
-title: "Horizon Blog"
-description: "News & Updates"
-url: "https://your-domain.com"   # 👉 यहाँ अपनी live साइट का URL डालें
-baseurl: ""                      # 👉 अगर subdirectory में है तो बदलें, जैसे "/blog"
+title: Horizon - World's Best News & Entertainment Portal
+description: लेटेस्ट न्यूज, ब्लॉग, स्पोर्ट्स, एंटरटेनमेंट, स्टडी, और ऑनलाइन वर्कशॉप्स का एक स्थान।
+url: "https://yourdomain.com"  # अपनी डोमेन बदलें
+baseurl: ""
 
-# 🎨 Theme
-theme: minima
-
-# 📄 Author Info
-author:
-  name: "Horizon Team"
-  email: "contact@your-domain.com"
-
-# 📑 Pagination Settings
 paginate: 5
-paginate_path: "/page:num/"
+paginate_path: "/blog/page:num/"
 
-# 🔌 Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-feed
 
-# 📰 Excerpt Settings
-excerpt_separator: "<!--more-->"   # पोस्ट में जहां तक preview दिखाना है
-
-# 🛠️ Defaults for Posts & Pages
 defaults:
   - scope:
-      path: ""        # सभी फाइलों पर लागू
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Horizon Team"
-  - scope:
       path: ""
-      type: "pages"
     values:
-      layout: "page"
+      image: /images/logo.png
 
-# 🗂️ Collections
-collections:
-  authors:
-    output: true
-
-# ✅ Markdown & Syntax Highlighter
-markdown: kramdown
-highlighter: rouge
-
-# ✅ Permalinks
-permalink: /:categories/:year/:month/:day/:title/
-
-# 🔗 Navigation Menu (Header Links)
-header_pages:
-  - index.md
-  - blog.md
-  - about.md
-  - contact.md
-
-# 🎨 Sass Settings
-sass:
-  style: compressed
+google_analytics: UA-XXXXX-Y  # अपना GA ID डालें
+adsense_client: ca-pub-XXXX  # अपना Adsense ID डालें
