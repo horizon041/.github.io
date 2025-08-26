@@ -1,6 +1,6 @@
 title: Horizon - World's Best News & Entertainment Portal
 description: लेटेस्ट न्यूज, ब्लॉग, स्पोर्ट्स, एंटरटेनमेंट, ट्रेंडिंग, स्टडी, और ऑनलाइन वर्कशॉप्स का एक स्थान।
-url: "https://yourdomain.com"  # अपनी साइट का URL डालें
+url: "http://localhost:4000"  # लोकल टेस्ट के लिए, लाइव के लिए बदलें
 baseurl: ""
 paginate: 5
 paginate_path: "/blog/page:num/"
