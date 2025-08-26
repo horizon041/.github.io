@@ -1,37 +1,129 @@
+---
+layout: default
 title: "Horizon Blog"
-description: "Latest news, blogs, and updates with a clean dark theme."
-baseurl: "" # Agar repo root pe hai to empty rakho
-url: "https://horizon04.github.io/sp" # apni site ka full URL
+---
 
-# Theme
-theme: minima
+<h1 class="page-title">{{ page.title }}</h1>
 
-# Build settings
-markdown: kramdown
-permalink: /:categories/:title/
+<!-- 📰 Blog Posts Loop -->
+<div class="posts">
+  {% for post in paginator.posts %}
+    <article class="post-card">
+      <h2 class="post-title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h2>
+      <p class="post-meta">🗓 {{ post.date | date: "%B %d, %Y" }}</p>
+      <div class="post-excerpt">
+        {{ post.excerpt | strip_html | truncate: 160 }}
+      </div>
+      <a class="read-more" href="{{ post.url }}">👉 Read More</a>
+    </article>
+  {% endfor %}
+</div>
 
-# Pagination
-plugins:
-  - jekyll-paginate
+<!-- 📌 Pagination Controls -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a class="page-link prev" href="{{ paginator.previous_page_path }}">⬅ पिछला</a>
+  {% endif %}
 
-paginate: 5              # ek page par kitne posts dikhe
-paginate_path: "/page:num"
+  <span class="page-info">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
-# Exclude unnecessary files
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+  {% if paginator.next_page %}
+    <a class="page-link next" href="{{ paginator.next_page_path }}">अगला ➡</a>
+  {% endif %}
+</div>
 
-# Author Info
-author:
-  name: "Horizon"
-  email: "youremail@example.com"
+<style>
+/* 🌟 Blog Page Styling */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 3px solid #4dabf7;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
-# Social Links (footer ya header me dikhane ke liye)
-minima:
-  social_links:
-    github: horizon04
-    youtube: yourchannel
-    twitter: yourhandle
+/* 📦 Post Cards */
+.post-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.post-title a {
+  color: #82cfff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.post-title a:hover {
+  color: #4dabf7;
+  text-decoration: underline;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.8rem;
+}
+
+.post-excerpt {
+  color: #ddd;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #4dabf7;
+  color: #121212;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: #82cfff;
+}
+
+/* 🔄 Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.page-link {
+  padding: 0.5rem 1rem;
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.page-link:hover {
+  background: #4dabf7;
+  color: #121212;
+}
+
+.page-info {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+</style>
