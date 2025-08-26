@@ -1,32 +1,37 @@
----
-layout: default
 title: "Horizon Blog"
----
+description: "Latest news, blogs, and updates with a clean dark theme."
+baseurl: "" # Agar repo root pe hai to empty rakho
+url: "https://horizon04.github.io/sp" # apni site ka full URL
 
-<h1>{{ page.title }}</h1>
+# Theme
+theme: minima
 
-<!-- Blog Posts Loop -->
-<div class="posts">
-  {% for post in paginator.posts %}
-    <article class="post">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.date | date: "%Y-%m-%d" }}</p>
-      <div class="excerpt">
-        {{ post.excerpt }}
-      </div>
-    </article>
-  {% endfor %}
-</div>
+# Build settings
+markdown: kramdown
+permalink: /:categories/:title/
 
-<!-- Pagination Controls -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}">⬅ पिछला पेज</a>
-  {% endif %}
+# Pagination
+plugins:
+  - jekyll-paginate
 
-  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+paginate: 5              # ek page par kitne posts dikhe
+paginate_path: "/page:num"
 
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}">अगला पेज ➡</a>
-  {% endif %}
-</div>
+# Exclude unnecessary files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Author Info
+author:
+  name: "Horizon"
+  email: "youremail@example.com"
+
+# Social Links (footer ya header me dikhane ke liye)
+minima:
+  social_links:
+    github: horizon04
+    youtube: yourchannel
+    twitter: yourhandle
