@@ -1,42 +1,28 @@
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Change the text of an element when a button is clicked
-    const btn = document.getElementById('changeTextBtn');
-    const output = document.getElementById('outputText');
-
-    btn.addEventListener('click', function () {
-        output.textContent = 'Hello, JavaScript is working!';
-    });
-
-    // Simple form validation
-    const form = document.getElementById('sampleForm');
-    const nameInput = document.getElementById('nameInput');
-    const errorMsg = document.getElementById('errorMsg');
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (nameInput.value.trim() === '') {
-            errorMsg.textContent = 'Name is required!';
-        } else {
-            errorMsg.textContent = '';
-            alert('Form submitted successfully!');
-            form.reset();
-        }
-    });
-});
 <script>
-  function toggleLang(btn) {
-    const post = btn.closest('.post');
-    const hindiDiv = post.querySelector('.hindi');
-    const englishDiv = post.querySelector('.english');
-    if (hindiDiv.style.display !== "none") {
-      hindiDiv.style.display = "none";
-      englishDiv.style.display = "";
-      btn.innerText = "स्विच करें हिंदी में";
-    } else {
-      hindiDiv.style.display = "";
-      englishDiv.style.display = "none";
-      btn.innerText = "Switch to English";
-    }
+  function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    if (sidebar) sidebar.classList.toggle("active");
   }
+
+  function searchPosts() {
+    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+      const text = post.textContent.toLowerCase();
+      post.style.display = text.includes(searchTerm) ? 'block' : 'none';
+    });
+  }
+
+  function filterPosts(category) {
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+      const categories = post.getAttribute('data-category')?.toLowerCase() || '';
+      post.style.display = (category === 'All' || categories.includes(category.toLowerCase())) ? 'block' : 'none';
+    });
+  }
+
+  window.onload = function() {
+    filterPosts('All');
+    document.getElementById('searchInput')?.addEventListener('input', searchPosts);
+  };
 </script>
