@@ -1,21 +1,13 @@
 title: Horizon - World's Best News & Entertainment Portal
-description: लेटेस्ट न्यूज, ब्लॉग, स्पोर्ट्स, एंटरटेनमेंट, स्टडी, और ऑनलाइन वर्कशॉप्स का एक स्थान।
-url: "https://yourdomain.com"  # अपनी डोमेन बदलें
+description: लेटेस्ट न्यूज, ब्लॉग, स्पोर्ट्स, एंटरटेनमेंट, ट्रेंडिंग, स्टडी, और ऑनलाइन वर्कशॉप्स का एक स्थान।
+url: "https://yourdomain.com"  # अपनी साइट का URL डालें
 baseurl: ""
-
 paginate: 5
 paginate_path: "/blog/page:num/"
-
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /images/logo.png
-
-google_analytics: UA-XXXXX-Y  # अपना GA ID डालें
-adsense_client: ca-pub-XXXX  # अपना Adsense ID डालें
+# वैकल्पिक (अगर उपयोग करना हो)
+# google_analytics: UA-XXXXX-Y
+# adsense_client: ca-pub-XXXX
