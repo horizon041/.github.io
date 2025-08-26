@@ -4,47 +4,93 @@ title: "ब्लॉग"
 permalink: /blog/
 ---
 
-<!-- Custom Blog Layout -->
-<div class="container">
-  <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Sidebar</button>
-  <aside>
-    <h3>Categories</h3>
-    <ul>
-      <li><a href="#">Programming</a></li>
-      <li><a href="#">Tech News</a></li>
-      <li><a href="#">Tutorials</a></li>
-      <li><a href="#">Reviews</a></li>
-    </ul>
-    <h3>Recent Posts</h3>
-    <ul>
-      {% for post in site.posts limit:3 %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </aside>
+<div class="blog-container">
+  <!-- Header with Logo and Search Bar -->
+  <header class="blog-header">
+    <div class="logo">Horizon Blog</div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search blog posts..." />
+      <button onclick="searchPosts()">🔍</button>
+    </div>
+  </header>
 
-  <main>
-    <!-- Blog Posts Section -->
-    <section class="section">
-      <h2>ब्लॉग</h2>
-      {% for post in site.posts %}
-      <div class="blog-post">
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <div class="meta">📅 {{ post.date | date: "%d %B %Y" }}</div>
-        <p>{{ post.excerpt }}</p>
+  <div class="main-content">
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <div class="section-buttons">
+        <button onclick="filterPosts('All')">All</button>
+        <button onclick="filterPosts('Programming')">Programming</button>
+        <button onclick="filterPosts('Tech News')">Tech News</button>
+        <button onclick="filterPosts('Tutorials')">Tutorials</button>
+        <button onclick="filterPosts('Reviews')">Reviews</button>
       </div>
-      {% endfor %}
-      <!-- Static Content Cards from First Snippet -->
-      <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ब्लॉग पोस्ट 1</div>
-      <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ब्लॉग पोस्ट 2</div>
-      <div class="adsense-placeholder">यहाँ Adsense विज्ञापन</div>
-    </section>
-  </main>
+      <h3>Recent Posts</h3>
+      <ul>
+        {% for post in site.posts limit:3 %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <main class="blog-main">
+      <section class="blog-section">
+        <h2>ब्लॉग</h2>
+        <div id="blog-posts">
+          {% for post in paginator.posts %}
+          <div class="blog-post" data-category="{{ post.categories | join: ' ' }}">
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <div class="meta">📅 {{ post.date | date: "%d %B %Y" }} | By Horizon Team</div>
+            <p>{{ post.excerpt }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+          {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">Previous</a>
+          {% else %}
+          <span class="pagination-disabled">Previous</span>
+          {% endif %}
+          <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+          {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">Next</a>
+          {% else %}
+          <span class="pagination-disabled">Next</span>
+          {% endif %}
+        </div>
+        {% endif %}
+      </section>
+    </main>
+  </div>
 </div>
 
 <script>
   function toggleSidebar() {
-    const sidebar = document.querySelector("aside");
+    const sidebar = document.querySelector(".sidebar");
     sidebar.classList.toggle("active");
   }
+
+  function searchPosts() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+      const text = post.textContent.toLowerCase();
+      post.style.display = text.includes(searchTerm) ? 'block' : 'none';
+    });
+  }
+
+  function filterPosts(category) {
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+      const categories = post.getAttribute('data-category').toLowerCase();
+      post.style.display = (category === 'All' || categories.includes(category.toLowerCase())) ? 'block' : 'none';
+    });
+  }
+
+  window.onload = function() {
+    filterPosts('All');
+  };
 </script>
