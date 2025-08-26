@@ -1,238 +1,32 @@
 ---
 layout: default
-title: "Blog"
+title: "ब्लॉग"
 permalink: /blog/
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ page.title }} - {{ site.title }}</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f5fb;
-      color: #333;
-    }
-
-    nav {
-      background: #283593;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.8rem 2rem;
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-
-    nav ul li a:hover {
-      color: #ffca28;
-    }
-
-    .container {
-      display: flex;
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      gap: 2rem;
-    }
-
-    aside {
-      flex: 0 0 250px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(63,81,181,0.07);
-      padding: 1.5rem 1rem;
-      height: fit-content;
-    }
-
-    aside h3 {
-      margin-top: 0;
-      color: #3f51b5;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 0.5rem;
-    }
-
-    aside ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    aside ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    aside ul li a {
-      text-decoration: none;
-      color: #283593;
-      transition: color 0.2s;
-    }
-
-    aside ul li a:hover {
-      color: #ffca28;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .blog-post {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(63,81,181,0.07);
-      margin-bottom: 2rem;
-      padding: 2rem;
-      transition: transform 0.2s;
-    }
-
-    .blog-post:hover {
-      transform: translateY(-5px) scale(1.01);
-      box-shadow: 0 4px 16px rgba(63,81,181,0.13);
-    }
-
-    .blog-post h2 {
-      margin-top: 0;
-      color: #3f51b5;
-    }
-
-    .blog-post .meta {
-      color: #777;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .blog-post p {
-      line-height: 1.7;
-    }
-
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-        gap: 0;
-      }
-
-      aside {
-        margin-bottom: 2rem;
-        width: 100%;
-        order: 2;
-      }
-
-      main {
-        order: 1;
-      }
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        padding: 0.5rem 1rem;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-      }
-
-      nav .logo {
-        font-size: 1.2rem;
-      }
-
-      aside {
-        padding: 1rem 0.5rem;
-      }
-
-      .blog-post {
-        padding: 1rem;
-      }
-    }
-
-    .sidebar-toggle {
-      display: none;
-      background: #ffca28;
-      color: #283593;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    @media (max-width: 900px) {
-      .sidebar-toggle {
-        display: block;
-        margin-bottom: 1rem;
-      }
-
-      aside {
-        display: none;
-      }
-
-      aside.active {
-        display: block;
-      }
-    }
-  </style>
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.querySelector("aside");
-      sidebar.classList.toggle("active");
-    }
-  </script>
-</head>
-<body>
-  <nav>
-    <div class="logo">{{ site.title }}</div>
+<!-- Custom Blog Layout -->
+<div class="container">
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Sidebar</button>
+  <aside>
+    <h3>Categories</h3>
     <ul>
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
-      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      <li><a href="#">Programming</a></li>
+      <li><a href="#">Tech News</a></li>
+      <li><a href="#">Tutorials</a></li>
+      <li><a href="#">Reviews</a></li>
     </ul>
-  </nav>
+    <h3>Recent Posts</h3>
+    <ul>
+      {% for post in site.posts limit:3 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
 
-  <div class="container">
-    <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Sidebar</button>
-    <aside>
-      <h3>Categories</h3>
-      <ul>
-        <li><a href="#">Programming</a></li>
-        <li><a href="#">Tech News</a></li>
-        <li><a href="#">Tutorials</a></li>
-        <li><a href="#">Reviews</a></li>
-      </ul>
-      <h3>Recent Posts</h3>
-      <ul>
-        {% for post in site.posts limit:3 %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </aside>
-
-    <main>
+  <main>
+    <!-- Blog Posts Section -->
+    <section class="section">
+      <h2>ब्लॉग</h2>
       {% for post in site.posts %}
       <div class="blog-post">
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
@@ -240,7 +34,17 @@ permalink: /blog/
         <p>{{ post.excerpt }}</p>
       </div>
       {% endfor %}
-    </main>
-  </div>
-</body>
-</html>
+      <!-- Static Content Cards from First Snippet -->
+      <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ब्लॉग पोस्ट 1</div>
+      <div class="content-card"><img src="https://via.placeholder.com/100" alt="Image">ब्लॉग पोस्ट 2</div>
+      <div class="adsense-placeholder">यहाँ Adsense विज्ञापन</div>
+    </section>
+  </main>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector("aside");
+    sidebar.classList.toggle("active");
+  }
+</script>
