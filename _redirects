@@ -1,4 +1,1 @@
-echo "/*    /index.html   200" > _redirects
-git add .
-git commit -m "Added _redirects for client-side routing"
-git push origin main
+/old-path /new-path 301
