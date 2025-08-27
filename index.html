@@ -1,98 +1,215 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizon - Modern Buttons Layout</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(#f0f2f5, #e0e7ff);
-            font-family: 'Montserrat', sans-serif;
-        }
-        .logo {
-            font-size: 48px;
-            font-weight: bold;
-            color: #4b6cb7;
-            background: linear-gradient(90deg, #4b6cb7, #182848);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between buttons */
-            margin-bottom: 30px;
-        }
-        .modern-btn {
-            padding: 12px 25px;
-            font-size: 18px;
-            color: white;
-            background: linear-gradient(90deg, #4b6cb7, #182848);
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .modern-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .trend-section, .business-section, .study-section {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between buttons in all sections */
-            margin-top: 20px;
-        }
-        .trend-btn, .business-btn, .study-btn {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .trend-btn:hover, .business-btn:hover, .study-btn:hover {
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon - Modern News & Study Hub</title>
+  
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Horizon - Latest News, Sports, Entertainment, Study & Workshop Updates. Stay informed with trending topics and insights.">
+  <meta name="keywords" content="Horizon, News, Sports, Entertainment, Study, Workshop, Tech, Trending">
+
+  <!-- ✅ Open Graph -->
+  <meta property="og:title" content="Horizon - Modern News & Study Hub">
+  <meta property="og:description" content="Stay updated with News, Sports, Entertainment, Study & Workshop trends.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:image" content="https://yourdomain.com/logo.png">
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Horizon - Modern News & Study Hub">
+  <meta name="twitter:description" content="Stay updated with News, Sports, Entertainment, Study & Workshop trends.">
+  <meta name="twitter:image" content="https://yourdomain.com/logo.png">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(#f0f2f5, #e0e7ff);
+    }
+    .logo {
+      font-size: 48px;
+      font-weight: bold;
+      color: #4b6cb7;
+      background: linear-gradient(90deg, #4b6cb7, #182848);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .modern-btn {
+      padding: 12px 25px;
+      font-size: 18px;
+      color: white;
+      background: linear-gradient(90deg, #4b6cb7, #182848);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .modern-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ✅ Trending Slider */
+    .slider-container {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      background: #fff;
+      padding: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .slider {
+      display: flex;
+      gap: 20px;
+      transition: all 0.5s ease-in-out;
+    }
+    .slide {
+      min-width: 250px;
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+      color: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* ✅ Category Grid */
+    .category-section {
+      padding: 20px;
+    }
+    .category-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #182848;
+    }
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .post-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
+    .post-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #4b6cb7;
+    }
+    .post-card p {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <div class="logo">Horizon</div>
-    <div class="button-container">
-        <a href="#" class="modern-btn">News</a>
-        <a href="#" class="modern-btn">Blog</a>
-        <a href="#" class="modern-btn">Sports</a>
-        <a href="#" class="modern-btn">Entertainment</a>
-        <a href="#" class="modern-btn">Contact</a>
+  <div class="logo">Horizon</div>
+
+  <!-- ✅ Navigation -->
+  <div class="button-container">
+    <a href="#" class="modern-btn">News</a>
+    <a href="#" class="modern-btn">Blog</a>
+    <a href="#" class="modern-btn">Sports</a>
+    <a href="#" class="modern-btn">Entertainment</a>
+    <a href="#" class="modern-btn">Study</a>
+    <a href="#" class="modern-btn">Workshop</a>
+    <a href="#" class="modern-btn">Contact</a>
+  </div>
+
+  <!-- ✅ Trending Auto Slider -->
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide">🚀 Latest Tech Innovation</div>
+      <div class="slide">🎬 Bollywood Buzz</div>
+      <div class="slide">⚽ Sports Highlights</div>
+      <div class="slide">📈 Stock Market Updates</div>
+      <div class="slide">📚 Study Tips & Tricks</div>
     </div>
-    <div class="trend-section">
-        <a href="#" class="trend-btn">Trend Stock</a>
-        <a href="#" class="trend-btn">Bollywood Buzz</a>
-        <a href="#" class="trend-btn">AI and Tech</a>
+  </div>
+
+  <!-- ✅ Category Sections -->
+  <div class="category-section">
+    <div class="category-title">📰 Latest News</div>
+    <div class="post-grid">
+      <div class="post-card"><h4>News 1</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>News 2</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>News 3</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>News 4</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>News 5</h4><p>Short description...</p></div>
     </div>
-    <div class="business-section">
-        <a href="#" class="business-btn">Cafe</a>
-        <a href="#" class="business-btn">Website Builder</a>
-        <a href="#" class="business-btn">Freelancing Work</a>
-        <a href="#" class="business-btn">Affiliate</a>
-        <a href="#" class="business-btn">Dropshipping</a>
+  </div>
+
+  <div class="category-section">
+    <div class="category-title">⚽ Sports</div>
+    <div class="post-grid">
+      <div class="post-card"><h4>Sports 1</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Sports 2</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Sports 3</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Sports 4</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Sports 5</h4><p>Short description...</p></div>
     </div>
-    <div class="study-section">
-        <a href="#" class="study-btn">Competitive</a>
-        <a href="#" class="study-btn">Board</a>
-        <a href="#" class="study-btn">Computer</a>
+  </div>
+
+  <div class="category-section">
+    <div class="category-title">🎬 Entertainment</div>
+    <div class="post-grid">
+      <div class="post-card"><h4>Movie 1</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Movie 2</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Movie 3</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Movie 4</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Movie 5</h4><p>Short description...</p></div>
     </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-title">📚 Study</div>
+    <div class="post-grid">
+      <div class="post-card"><h4>Study 1</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Study 2</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Study 3</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Study 4</h4><p>Short description...</p></div>
+      <div class="post-card"><h4>Study 5</h4><p>Short description...</p></div>
+    </div>
+  </div>
+
+  <!-- ✅ JS for Auto Slider -->
+  <script>
+    const slider = document.querySelector('.slider');
+    if (slider) {
+      let scrollAmount = 0;
+      setInterval(() => {
+        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+          scrollAmount = 0;
+        } else {
+          scrollAmount += slider.clientWidth * 0.8;
+        }
+        slider.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }, 3000); // हर 3 सेकंड में slide move होगा
+    }
+  </script>
 </body>
 </html>
