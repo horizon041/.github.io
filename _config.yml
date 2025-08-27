@@ -1,17 +1,14 @@
-title: Horizon - World's Best News & Entertainment Portal
-description: "लेटेस्ट न्यूज, ब्लॉग, स्पोर्ट्स, एंटरटेनमेंट, ट्रेंडिंग, स्टडी, और ऑनलाइन वर्कशॉप्स का एक स्थान।"
-# Local testing ke liye comment karen
-# url: "http://localhost:4000"
-# Live deployment ke liye uncomment karen
-url: "https://horizon041.github.io"
-baseurl: "/sp/Horizon-Homepage" # Subfolder ke liye
-paginate: 5
-paginate_path: "/blog/page/:num/"
+title: "Horizon Blog"
+description: "News, Blog, Entertainment & More"
+baseurl: "" 
+url: "https://yourusername.github.io"
+
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
-# Optional (uncomment and replace with real IDs when ready)
-# google_analytics: UA-XXXXX-Y
-# adsense_client: ca-pub-XXXX
-# theme: minima  # Uncomment if using Minima, otherwise use custom layouts
+  - jekyll-feed
+
+paginate: 6
+paginate_path: "/page:num/"
+theme: null   # custom layouts use होंगे
