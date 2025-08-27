@@ -1,10 +1,10 @@
 title: Horizon - World's Best News & Entertainment Portal
-description: लेटेस्ट न्यूज, ब्लॉग, स्पोर्ट्स, एंटरटेनमेंट, ट्रेंडिंग, स्टडी, और ऑनलाइन वर्कशॉप्स का एक स्थान।
+description: "लेटेस्ट न्यूज, ब्लॉग, स्पोर्ट्स, एंटरटेनमेंट, ट्रेंडिंग, स्टडी, और ऑनलाइन वर्कशॉप्स का एक स्थान।"
 # Local testing ke liye comment karen
 # url: "http://localhost:4000"
 # Live deployment ke liye uncomment karen
-# url: "https://horizon041.github.io/sp/Horizon-Homepage"
-baseurl: "/Horizon-Homepage"  # Subfolder ke liye, root ke liye ""
+url: "https://horizon041.github.io/sp"
+baseurl: "/Horizon-Homepage"  # Subfolder ke liye
 paginate: 5
 paginate_path: "/blog/page/:num/"
 plugins:
@@ -14,4 +14,4 @@ plugins:
 # Optional (uncomment and replace with real IDs when ready)
 # google_analytics: UA-XXXXX-Y
 # adsense_client: ca-pub-XXXX
-theme: minima  # Default theme, customize as needed
+# theme: minima  # Uncomment if using Minima, otherwise use custom layouts
