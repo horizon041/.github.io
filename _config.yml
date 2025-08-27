@@ -13,7 +13,7 @@ author:
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: jekyll/minima   # ✅ theme: minima हटा दिया और remote_theme रख दिया
 
 # Output folder
 destination: _site
