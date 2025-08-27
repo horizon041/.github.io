@@ -1,14 +1,9 @@
-title: "Horizon Blog"
-description: "News, Blog, Entertainment & More"
+title: "Horizon"
+description: "World's Best News & Entertainment Portal"
 baseurl: "" 
-url: "https://yourusername.github.io"
+url: "https://yourusername.github.io" # अपने GitHub Pages URL डालना
+theme: minima
 
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
-
-paginate: 6
-paginate_path: "/page:num/"
-theme: null   # custom layouts use होंगे
+# Optional settings
+google_analytics: ""   # GA ID डाल सकते हो
+adsense_client: ""     # Adsense client ID डाल सकते हो
