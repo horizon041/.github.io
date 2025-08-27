@@ -1,28 +1,59 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="{{ page.lang | default: site.lang | default: 'hi' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
-  <meta name="keywords" content="news, blog, sports, entertainment, trending, study, workshop, horizon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <meta name="keywords" content="news, blog, sports, entertainment, horizon, study, workshop">
+
+  <!-- SEO Tag Plugin -->
+  {% seo %}
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ site.url }}{{ page.image | default: '/images/logo.png' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ page.image | default: '/images/logo.png' }}">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/default.css' | relative_url }}">
+
+  <!-- Google Analytics (conditional) -->
+  {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}');
+    </script>
+  {% endif %}
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <img src="{{ '/images/logo.png' | relative_url }}" alt="Horizon Logo" class="logo">
+      <a href="{{ '/' | relative_url }}">
+        <img src="{{ '/images/logo.png' | relative_url }}" alt="Horizon Logo" class="logo">
+      </a>
       <nav>
         <ul>
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/news.html' | relative_url }}">News</a></li>
-          <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/sports.html' | relative_url }}">Sports</a></li>
-          <li><a href="{{ '/entertainment.html' | relative_url }}">Entertainment</a></li>
-          <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
-          <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
-          <li><a href="{{ '/privacy.html' | relative_url }}">Privacy</a></li>
+          <li><a href="{{ '/news/' | relative_url }}">News</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/sports/' | relative_url }}">Sports</a></li>
+          <li><a href="{{ '/entertainment/' | relative_url }}">Entertainment</a></li>
+          <li><a href="{{ '/study/' | relative_url }}">Study</a></li>
+          <li><a href="{{ '/workshop/' | relative_url }}">Workshop</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -34,7 +65,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; {{ site.time | date: "%Y" }} Horizon. All rights reserved.</p>
+      <p>&copy; {{ site.time | date: "%Y" }} Horizon. All Rights Reserved.</p>
     </div>
   </footer>
 </body>
