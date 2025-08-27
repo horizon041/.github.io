@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizon - Best Homepage</title>
+    <title>Horizon - Modern Buttons Layout</title>
     <style>
         body {
             margin: 0;
@@ -27,12 +27,13 @@
             text-align: center;
         }
         .button-container {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons */
             margin-bottom: 30px;
         }
         .modern-btn {
             padding: 12px 25px;
-            margin: 10px;
             font-size: 18px;
             color: white;
             background: linear-gradient(90deg, #4b6cb7, #182848);
@@ -46,13 +47,14 @@
             transform: scale(1.1);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        .trend-section, .business-section {
-            text-align: center;
+        .trend-section, .business-section, .study-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons in all sections */
             margin-top: 20px;
         }
-        .trend-btn, .business-btn {
+        .trend-btn, .business-btn, .study-btn {
             padding: 10px 20px;
-            margin: 5px;
             font-size: 16px;
             color: white;
             background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
@@ -61,7 +63,7 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
-        .trend-btn:hover, .business-btn:hover {
+        .trend-btn:hover, .business-btn:hover, .study-btn:hover {
             transform: scale(1.05);
         }
     </style>
@@ -76,8 +78,7 @@
         <a href="#" class="modern-btn">Contact</a>
     </div>
     <div class="trend-section">
-        <a href="#" class="trend-btn">Trending</a>
-        <a href="#" class="trend-btn">Stock</a>
+        <a href="#" class="trend-btn">Trend Stock</a>
         <a href="#" class="trend-btn">Bollywood Buzz</a>
         <a href="#" class="trend-btn">AI and Tech</a>
     </div>
@@ -87,6 +88,11 @@
         <a href="#" class="business-btn">Freelancing Work</a>
         <a href="#" class="business-btn">Affiliate</a>
         <a href="#" class="business-btn">Dropshipping</a>
+    </div>
+    <div class="study-section">
+        <a href="#" class="study-btn">Competitive</a>
+        <a href="#" class="study-btn">Board</a>
+        <a href="#" class="study-btn">Computer</a>
     </div>
 </body>
 </html>
