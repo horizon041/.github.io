@@ -1,9 +1,16 @@
 title: "Horizon"
 description: "World's Best News & Entertainment Portal"
-baseurl: "" 
-url: "https://horizon041.github.io" # अपने GitHub Pages URL डालना
-theme: minima
+url: "https://<your-username>.github.io"
+baseurl: ""
 
-# Optional settings
-google_analytics: ""   # GA ID डाल सकते हो
-adsense_client: ""     # Adsense client ID डाल सकते हो
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-include-cache
+
+paginate: 6
+paginate_path: "/page:num/"
