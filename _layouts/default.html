@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   <meta name="keywords" content="news, blog, sports, entertainment, horizon, study, workshop">
 
-  <!-- SEO Tag Plugin -->
+  <!-- ✅ SEO Tag Plugin -->
   {% seo %}
 
-  <!-- Open Graph -->
+  <!-- ✅ Open Graph -->
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
@@ -18,21 +19,21 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 
-  <!-- Twitter -->
+  <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title | default: site.title }}">
   <meta name="twitter:description" content="{{ page.description | default: site.description }}">
   <meta name="twitter:image" content="{{ site.url }}{{ page.image | default: '/images/logo.png' }}">
 
-  <!-- Styles -->
+  <!-- ✅ Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/default.css' | relative_url }}">
 
-  <!-- Google Analytics (conditional) -->
+  <!-- ✅ Google Analytics (Optional) -->
   {% if site.google_analytics %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', '{{ site.google_analytics }}');
     </script>
@@ -68,5 +69,8 @@
       <p>&copy; {{ site.time | date: "%Y" }} Horizon. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- ✅ Custom JS Files -->
+  <script src="{{ '/assets/js/slider.js' | relative_url }}"></script>
 </body>
 </html>
