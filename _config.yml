@@ -1,9 +1,24 @@
+# Site settings
 title: "Horizon"
-description: "World's Best News & Entertainment Portal"
-url: "https://<your-username>.github.io"
-baseurl: ""
+description: "Horizon - World’s Best News & Entertainment Portal"
+lang: "hi"     # हिंदी डिफ़ॉल्ट, आप "en" भी रख सकते हो
+timezone: "Asia/Kolkata"
+url: "https://horizon041.github.io"   # अपने GitHub Pages या custom domain डालें
+baseurl: "/sp"   # अगर सिर्फ repo name से serve हो रहा है
 
+# Author info
+author:
+  name: "Horizon Team"
+  email: "your-email@example.com"
+
+# Build settings
+markdown: kramdown
 theme: minima
+
+# Output folder
+destination: _site
+
+# SEO + Performance Plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -12,5 +27,79 @@ plugins:
   - jekyll-archives
   - jekyll-include-cache
 
+# Pagination
 paginate: 6
 paginate_path: "/page:num/"
+
+# Feed settings
+feed:
+  path: atom.xml
+
+# Sitemap settings
+sitemap:
+  exclude:
+    - "/assets/*"
+    - "/admin/*"
+  include_posts: true
+  changefreq: daily
+  priority: 0.7
+
+# Archives (year/month wise posts)
+jekyll-archives:
+  enabled:
+    - categories
+    - year
+    - month
+  layout: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    category: '/category/:name/'
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include specific files
+include:
+  - _pages
+
+# Permalink structure
+permalink: /:categories/:title/
+
+# Defaults for posts/pages
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Horizon Team"
+      lang: "hi"
+      seo:
+        type: "article"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      lang: "hi"
+      seo:
+        type: "website"
+
+# Social media (SEO + sharing)
+twitter:
+  username: "horizon_news"
+facebook:
+  app_id: "1234567890"
+  publisher: "https://www.facebook.com/horizon"
+
+# Google services
+google_analytics: "G-XXXXXXXXXX"   # अपना Analytics ID डालें
+adsense_client: "ca-pub-xxxxxxxxxxxxxxxx"  # अगर AdSense है तो डालें
