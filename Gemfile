@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '2.7.0'
+ruby '2.7.8'
 gem "jekyll", "~> 4.3.0"
 gem "webrick", "~> 1.8"
 gem 'bundler'
