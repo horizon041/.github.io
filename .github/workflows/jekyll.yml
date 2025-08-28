@@ -13,15 +13,14 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2.0'  # Ruby 3.2.0 या ऊपर, rubygems-update के लिए संगत
-          bundler-cache: true   # Bundler के लिए कैशिंग
+          ruby-version: '3.2.0'  # Ruby 3.2.0 या 3.3.0
+          bundler-cache: true   # Cache enable
       - name: Install Dependencies
         run: |
           gem update --system
-          gem install bundler
-          bundle install --jobs 4 --retry 3  # Parallel installation और retries
+          bundle install --jobs 4 --retry 3  # Parallel और retries
       - name: Build with Jekyll
-        run: bundle exec jekyll build --trace  # --trace डिटेल्ड त्रुटि लॉग के लिए
+        run: bundle exec jekyll build --trace
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
