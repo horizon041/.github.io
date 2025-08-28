@@ -3,22 +3,19 @@ title: "Horizon"
 description: "Horizon - World’s Best News & Entertainment Portal"
 lang: "hi"     # हिंदी डिफ़ॉल्ट, आप "en" भी रख सकते हो
 timezone: "Asia/Kolkata"
-url: "https://horizon041.github.io"   # अपने GitHub Pages या custom domain डालें
-baseurl: "/sp"   # अगर सिर्फ repo name से serve हो रहा है
+url: ""        # GitHub Pages के लिए खाली छोड़ें, deployment के बाद auto populate हो जाएगा
+baseurl: "/sp" # Repo name के आधार पर, deployment के बाद adjust करें
 
 # Author info
 author:
   name: "Horizon Team"
-  email: "your-email@example.com"
+  email: "your-email@example.com" # Real email add karein ya hata den
 
 # Build settings
 markdown: kramdown
-remote_theme: jekyll/minima   # ✅ theme: minima हटा दिया और remote_theme रख दिया
+remote_theme: jekyll/minima   # GitHub Pages compatible
 
-# Output folder
-destination: _site
-
-# SEO + Performance Plugins
+# Plugins (SEO + Performance)
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -93,13 +90,12 @@ defaults:
       seo:
         type: "website"
 
-# Social media (SEO + sharing)
+# Social media (SEO + sharing) - Real values add karein
 twitter:
-  username: "horizon_news"
+  username: "horizon_news" # Real Twitter handle
 facebook:
-  app_id: "1234567890"
-  publisher: "https://www.facebook.com/horizon"
-
-# Google services
-google_analytics: "G-XXXXXXXXXX"   # अपना Analytics ID डालें
-adsense_client: "ca-pub-xxxxxxxxxxxxxxxx"  # अगर AdSense है तो डालें
+  app_id: ""               # Real Facebook App ID
+  publisher: ""            # Real Facebook page URL
+# Google services - Only add if active
+# google_analytics: "G-XXXXXXXXXX"   # Uncomment and add real ID
+# adsense_client: "ca-pub-xxxxxxxxxxxxxxxx"  # Uncomment and add real ID if using
