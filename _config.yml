@@ -1,101 +1,18 @@
-# Site settings
-title: "Horizon"
-description: "Horizon - World’s Best News & Entertainment Portal"
-lang: "hi"     # हिंदी डिफ़ॉल्ट, आप "en" भी रख सकते हो
-timezone: "Asia/Kolkata"
-url: ""        # GitHub Pages के लिए खाली छोड़ें, deployment के बाद auto populate हो जाएगा
-baseurl: "/sp" # Repo name के आधार पर, deployment के बाद adjust करें
-
-# Author info
-author:
-  name: "Horizon Team"
-  email: "your-email@example.com" # Real email add karein ya hata den
-
-# Build settings
-markdown: kramdown
-remote_theme: jekyll/minima   # GitHub Pages compatible
-
-# Plugins (SEO + Performance)
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-archives
-  - jekyll-include-cache
-
-# Pagination
-paginate: 6
-paginate_path: "/page:num/"
-
-# Feed settings
-feed:
-  path: atom.xml
-
-# Sitemap settings
-sitemap:
-  exclude:
-    - "/assets/*"
-    - "/admin/*"
-  include_posts: true
-  changefreq: daily
-  priority: 0.7
-
-# Archives (year/month wise posts)
-jekyll-archives:
-  enabled:
-    - categories
-    - year
-    - month
-  layout: archive
-  permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    category: '/category/:name/'
-
-# Exclude from build
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-
-# Include specific files
-include:
-  - _pages
-
-# Permalink structure
-permalink: /:categories/:title/
-
-# Defaults for posts/pages
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Horizon Team"
-      lang: "hi"
-      seo:
-        type: "article"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-      lang: "hi"
-      seo:
-        type: "website"
-
-# Social media (SEO + sharing) - Real values add karein
-twitter:
-  username: "horizon_news" # Real Twitter handle
-facebook:
-  app_id: ""               # Real Facebook App ID
-  publisher: ""            # Real Facebook page URL
-# Google services - Only add if active
-# google_analytics: "G-XXXXXXXXXX"   # Uncomment and add real ID
-# adsense_client: "ca-pub-xxxxxxxxxxxxxxxx"  # Uncomment and add real ID if using
+name: Build and Deploy
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+          bundler-cache: true  # Cache bundler gems
+      - run: bundle install
+      - run: bundle exec jekyll build --verbose  # Add verbose for debugging
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site  # Jekyll output directory
