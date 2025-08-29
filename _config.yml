@@ -3,8 +3,8 @@ title: "Horizon"
 description: "Horizon - World’s Best News & Entertainment Portal"
 lang: "hi"
 timezone: "Asia/Kolkata"
-url: ""        # GitHub Pages के लिए खाली
-baseurl: "/horizon04" # Repo name adjust karein
+url: ""
+baseurl: "/horizon04"
 
 # Author info
 author:
@@ -18,17 +18,16 @@ sass:
   sass_dir: assets/css
   style: compressed
 
-# Plugins
+# Plugins (GitHub Pages compatible)
 plugins:
-  - jekyll-remote-theme  # Minima remote theme ke liye
+  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-paginate  # Only if using pagination
+  - jekyll-paginate
   - jekyll-archives
-  - jekyll-include-cache
 
-# Pagination (optional, remove if not needed)
+# Pagination
 paginate: 6
 paginate_path: "/page:num/"
 
@@ -76,3 +75,8 @@ defaults:
       lang: "hi"
       seo:
         type: "website"
+
+# Google Fonts
+google_fonts:
+  - name: "Inter"
+    weights: [400, 600, 700]
