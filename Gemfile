@@ -1,7 +1,7 @@
 source "https://rubygems.org"
-ruby '3.4.1'  # Match your current Ruby version
+ruby '3.4.1'
 
-gem "jekyll", "~> 4.3.4"
+gem "jekyll", "~> 3.9.0"  # GitHub Pages compatible
 gem "webrick", "~> 1.8"
 gem 'bundler'
 gem 'csv'
@@ -15,5 +15,5 @@ group :jekyll_plugins do
   gem "jekyll-paginate"
   gem "jekyll-archives"
   gem "jekyll-remote-theme"
-  # Remove github-pages
+  gem "github-pages"  # Keep this for GitHub Pages
 end
