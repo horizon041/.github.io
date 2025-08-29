@@ -1,48 +1,38 @@
 # Site settings
 title: "Horizon"
 description: "Horizon - World’s Best News & Entertainment Portal"
-lang: "hi"     # हिंदी डिफ़ॉल्ट, आप "en" भी रख सकते हो
+lang: "hi"
 timezone: "Asia/Kolkata"
-url: ""        # GitHub Pages के लिए खाली छोड़ें, deployment के बाद auto populate हो जाएगा
-baseurl: "/horizon04" # Repo name के आधार पर adjust करें (aapka repo name confirm karein)
+url: ""        # GitHub Pages के लिए खाली
+baseurl: "/horizon04" # Repo name adjust karein
 
 # Author info
 author:
   name: "Horizon Team"
-  email: "horizon-team@example.com" # Placeholder email, real ya hata den
+  email: "horizon-team@example.com"
 
 # Build settings
 markdown: kramdown
-remote_theme: jekyll/minima   # GitHub Pages compatible
-# highlighter: rouge  # Uncomment if syntax highlighting chahiye
+remote_theme: jekyll/minima
+sass:
+  sass_dir: assets/css
+  style: compressed
 
-# Plugins (SEO + Performance)
+# Plugins
 plugins:
+  - jekyll-remote-theme  # Minima remote theme ke liye
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-paginate  # Only if using pagination
   - jekyll-archives
   - jekyll-include-cache
 
-# Pagination
+# Pagination (optional, remove if not needed)
 paginate: 6
 paginate_path: "/page:num/"
 
-# Feed settings
-feed:
-  path: atom.xml
-
-# Sitemap settings
-sitemap:
-  exclude:
-    - "/assets/*"
-    - "/admin/*"
-  include_posts: true
-  changefreq: daily
-  priority: 0.7
-
-# Archives (year/month wise posts)
+# Archives
 jekyll-archives:
   enabled:
     - categories
@@ -54,25 +44,22 @@ jekyll-archives:
     month: '/:year/:month/'
     category: '/category/:name/'
 
-# Exclude from build
+# Exclude/Include
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
-
-# Include specific files
 include:
   - _pages
 
-# Permalink structure
+# Permalink
 permalink: /:categories/:title/
 
-# Defaults for posts/pages
+# Defaults
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
@@ -81,8 +68,7 @@ defaults:
       lang: "hi"
       seo:
         type: "article"
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
@@ -90,14 +76,3 @@ defaults:
       lang: "hi"
       seo:
         type: "website"
-
-# Social media (SEO + sharing) - Real values add karein ya comments mein rakhein
-# twitter:
-#   username: "horizon_news" # Real Twitter handle
-# facebook:
-#   app_id: ""              # Real Facebook App ID
-#   publisher: ""           # Real Facebook page URL
-
-# Google services - Only add if active
-# google_analytics: "G-XXXXXXXXXX"   # Uncomment and add real ID
-# adsense_client: "ca-pub-xxxxxxxxxxxxxxxx"  # Uncomment and add real ID if using
