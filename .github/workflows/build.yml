@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.1'  # Match current Ruby
+        ruby-version: '3.4.1'
         bundler-cache: true
     - run: gem install bundler
     - run: bundle install --jobs 4 --retry 3
