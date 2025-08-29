@@ -12,4 +12,5 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-paginate"
   gem "jekyll-archives"
+  gem "github-pages"  # Add this for GitHub Pages compatibility
 end
