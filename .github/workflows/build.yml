@@ -11,11 +11,12 @@ jobs:
     - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '2.7.8'  # Gemfile se match
+        ruby-version: '3.4.1'  # Match current Ruby
         bundler-cache: true
     - run: gem install bundler
-    - run: bundle install
-    - run: bundle exec jekyll build --trace  # --trace for debugging
+    - run: bundle install --jobs 4 --retry 3
+    - run: rm -rf _site || true
+    - run: bundle exec jekyll build --trace
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
