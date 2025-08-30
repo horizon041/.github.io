@@ -13,7 +13,7 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.3.0'  # Match with Gemfile
+        ruby-version: '3.4.1'  # Match with Gemfile
         bundler-cache: true
     - name: Install dependencies
     - run: gem install bundler
