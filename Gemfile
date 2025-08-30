@@ -1,9 +1,12 @@
 source "https://rubygems.org"
-ruby '3.4.1'
+ruby '3.4.1'  # Match with your workflow
 
-gem "jekyll", "~> 3.9.3"  # GitHub Pages compatible
+# Core Jekyll for GitHub Pages compatibility
+gem "jekyll", "~> 3.9.3"
 gem "webrick", "~> 1.8"
-gem "jekyll-include-cache"
+
+# Optional: Cache plugin (compatible with Jekyll 3.7+)
+gem "jekyll-include-cache", "~> 0.2.0"
 
 group :jekyll_plugins do
   gem "jekyll-sitemap"
@@ -12,5 +15,6 @@ group :jekyll_plugins do
   gem "jekyll-paginate"
   gem "jekyll-archives"
   gem "jekyll-remote-theme"
+  # GitHub Pages bundle (includes all supported plugins)
   gem "github-pages", group: :jekyll_plugins
 end
