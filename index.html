@@ -127,7 +127,7 @@
       gap: 15px;
       padding-bottom: 10px; /* To ensure scrollbar is visible */
     }
-    .post-card {
+    .blog-post {
       background: #fff;
       padding: 15px;
       border-radius: 12px;
@@ -136,17 +136,31 @@
       min-width: 220px; /* Fixed width for consistency */
       flex-shrink: 0; /* Prevent cards from shrinking */
     }
-    .post-card:hover {
+    .blog-post:hover {
       transform: translateY(-5px);
     }
-    .post-card h4 {
+    .blog-post h4 {
       font-size: 18px;
       margin-bottom: 8px;
       color: #4b6cb7;
     }
-    .post-card p {
+    .blog-post p {
       font-size: 14px;
       color: #555;
+    }
+
+    /* Search Input Styling */
+    .search-container {
+      margin: 20px 0;
+      text-align: center;
+      margin-left: 270px; /* Align with content */
+    }
+    #searchInput {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -180,48 +194,53 @@
     <a href="#" class="modern-btn">Contact</a>
   </div>
 
+  <!-- ✅ Search Input -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search posts...">
+  </div>
+
   <!-- ✅ Category Sections with Horizontal Scrolling -->
   <div class="category-section">
     <div class="category-title">📰 Latest News</div>
     <div class="post-grid">
-      <div class="post-card"><h4>News 1</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>News 2</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>News 3</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>News 4</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>News 5</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>News 1</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>News 2</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>News 3</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>News 4</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>News 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
   <div class="category-section">
     <div class="category-title">⚽ Sports</div>
     <div class="post-grid">
-      <div class="post-card"><h4>Sports 1</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Sports 2</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Sports 3</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Sports 4</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Sports 5</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Sports 1</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Sports 2</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Sports 3</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Sports 4</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Sports 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
   <div class="category-section">
     <div class="category-title">🎬 Entertainment</div>
     <div class="post-grid">
-      <div class="post-card"><h4>Movie 1</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Movie 2</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Movie 3</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Movie 4</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Movie 5</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Movie 1</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Movie 2</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Movie 3</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Movie 4</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Movie 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
   <div class="category-section">
     <div class="category-title">📚 Study</div>
     <div class="post-grid">
-      <div class="post-card"><h4>Study 1</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Study 2</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Study 3</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Study 4</h4><p>Short description...</p></div>
-      <div class="post-card"><h4>Study 5</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Study 1</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Study 2</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Study 3</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Study 4</h4><p>Short description...</p></div>
+      <div class="blog-post"><h4>Study 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
@@ -269,6 +288,34 @@
       else horizontalCurrentPage = 2;
       updateHorizontalPagination();
     });
+
+    // Search and Filter Functions
+    function toggleSidebar() {
+      const sidebar = document.querySelector(".sidebar");
+      if (sidebar) sidebar.classList.toggle("active");
+    }
+
+    function searchPosts() {
+      const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+      const posts = document.querySelectorAll('.blog-post');
+      posts.forEach(post => {
+        const text = post.textContent.toLowerCase();
+        post.style.display = text.includes(searchTerm) ? 'block' : 'none';
+      });
+    }
+
+    function filterPosts(category) {
+      const posts = document.querySelectorAll('.blog-post');
+      posts.forEach(post => {
+        const categories = post.getAttribute('data-category')?.toLowerCase() || '';
+        post.style.display = (category === 'All' || categories.includes(category.toLowerCase())) ? 'block' : 'none';
+      });
+    }
+
+    window.onload = function() {
+      filterPosts('All');
+      document.getElementById('searchInput')?.addEventListener('input', searchPosts);
+    };
   </script>
 </body>
 </html>
