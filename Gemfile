@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '3.3.0'  # Match with your workflow
+ruby '3.4.1'  # Match with your workflow
 
 # Core Jekyll for GitHub Pages compatibility
 gem "jekyll", "~> 3.9.3"
