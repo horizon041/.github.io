@@ -1,24 +1,20 @@
-# Site settings
 title: "Horizon"
 description: "Horizon - World’s Best News & Entertainment Portal"
 lang: "hi"
 timezone: "Asia/Kolkata"
-url: ""
+url: "https://horizon041.github.io"  # Your GitHub Pages URL
 baseurl: "/horizon04"
 
-# Author info
 author:
   name: "Horizon Team"
   email: "horizon-team@example.com"
 
-# Build settings
 markdown: kramdown
 remote_theme: jekyll/minima
 sass:
   sass_dir: assets/css
   style: compressed
 
-# Plugins (GitHub Pages compatible)
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
@@ -27,11 +23,9 @@ plugins:
   - jekyll-paginate
   - jekyll-archives
 
-# Pagination
 paginate: 6
 paginate_path: "/page:num/"
 
-# Archives
 jekyll-archives:
   enabled:
     - categories
@@ -43,7 +37,6 @@ jekyll-archives:
     month: '/:year/:month/'
     category: '/category/:name/'
 
-# Exclude/Include
 exclude:
   - README.md
   - Gemfile
@@ -53,10 +46,8 @@ exclude:
 include:
   - _pages
 
-# Permalink
 permalink: /:categories/:title/
 
-# Defaults
 defaults:
   - scope:
       path: ""
@@ -75,8 +66,3 @@ defaults:
       lang: "hi"
       seo:
         type: "website"
-
-# Google Fonts
-google_fonts:
-  - name: "Inter"
-    weights: [400, 600, 700]
