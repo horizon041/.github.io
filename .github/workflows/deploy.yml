@@ -10,19 +10,37 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.1'  # Match with Gemfile and system
+        ruby-version: '3.4.1'  # Match with Gemfile
         bundler-cache: true
+
     - name: Install dependencies
-      run: bundle install
-    - name: Build site
+      run: |
+        gem update --system
+        gem install bundler
+        bundle config set --local path 'vendor/bundle'
+        bundle install --jobs 4 --retry 3
+
+    - name: Check and create _posts directory
+      run: |
+        if [ ! -d "_posts" ]; then
+          mkdir _posts
+          echo "Created _posts directory."
+        else
+          echo "_posts directory already exists."
+        fi
+
+    - name: Build site with Jekyll
       run: bundle exec jekyll build --trace
+      env:
+        JEKYLL_ENV: production
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ gho EkUL10775ycJNssYg6Vz9sT0ZYLd1geitj }}
+        github_token: ${{ ghoEkUL10775ycJNssYg6Vz9sT0ZYLd1geitj }}
         publish_dir: ./_site
         publish_branch: gh-pages
-        
