@@ -9,16 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ruby/setup-ruby@v1
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.1'
+        ruby-version: '3.4.1'  # Match with Gemfile
         bundler-cache: true
     - run: gem install bundler
     - run: bundle install --jobs 4 --retry 3
-    - run: rm -rf _site || true
     - run: bundle exec jekyll build --trace
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ gho EkUL10775ycJNssYg6Vz9sT0ZYLd1geitj }}
         publish_dir: ./_site
+        publish_branch: gh-pages  # Ensure gh-pages branch
