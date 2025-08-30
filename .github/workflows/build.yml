@@ -8,12 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
     - uses: actions/checkout@v3
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.3.0'  # Match with Gemfile
         bundler-cache: true
+    - name: Install dependencies
     - run: gem install bundler
     - run: bundle install --jobs 4 --retry 3
     - run: bundle exec jekyll build --trace
