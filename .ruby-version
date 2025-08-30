@@ -2,7 +2,7 @@ steps:
   - uses: actions/checkout@v3
   - uses: ruby/setup-ruby@v1
     with:
-      ruby-version: '3.2.0'  # इसे 3.2.0 या 3.3.0 पर बदलें
+      ruby-version: '3.3.0'  # इसे 3.2.0 या 3.3.0 पर बदलें
   - run: bundle install
   - run: bundle exec jekyll build
   - name: Deploy to GitHub Pages
