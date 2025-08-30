@@ -110,6 +110,21 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
+    .filter-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background: linear-gradient(90deg, #1e3a8a, #1e40af);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 5px;
+      transition: transform 0.3s;
+    }
+    .filter-btn:hover {
+      transform: scale(1.05);
+    }
+
     /* ✅ Category Grid with Horizontal Scrolling */
     .category-section {
       padding: 20px;
@@ -199,48 +214,57 @@
     <input type="text" id="searchInput" placeholder="Search posts...">
   </div>
 
+  <!-- ✅ Filter Buttons -->
+  <div class="button-container" style="margin-top: 20px;">
+    <button class="filter-btn" onclick="filterPosts('All')">All</button>
+    <button class="filter-btn" onclick="filterPosts('news')">News</button>
+    <button class="filter-btn" onclick="filterPosts('sports')">Sports</button>
+    <button class="filter-btn" onclick="filterPosts('entertainment')">Entertainment</button>
+    <button class="filter-btn" onclick="filterPosts('study')">Study</button>
+  </div>
+
   <!-- ✅ Category Sections with Horizontal Scrolling -->
   <div class="category-section">
     <div class="category-title">📰 Latest News</div>
     <div class="post-grid">
-      <div class="blog-post"><h4>News 1</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>News 2</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>News 3</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>News 4</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>News 5</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="news"><h4>News 1</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="news"><h4>News 2</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="news"><h4>News 3</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="news"><h4>News 4</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="news"><h4>News 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
   <div class="category-section">
     <div class="category-title">⚽ Sports</div>
     <div class="post-grid">
-      <div class="blog-post"><h4>Sports 1</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Sports 2</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Sports 3</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Sports 4</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Sports 5</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="sports"><h4>Sports 1</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="sports"><h4>Sports 2</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="sports"><h4>Sports 3</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="sports"><h4>Sports 4</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="sports"><h4>Sports 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
   <div class="category-section">
     <div class="category-title">🎬 Entertainment</div>
     <div class="post-grid">
-      <div class="blog-post"><h4>Movie 1</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Movie 2</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Movie 3</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Movie 4</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Movie 5</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="entertainment"><h4>Movie 1</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="entertainment"><h4>Movie 2</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="entertainment"><h4>Movie 3</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="entertainment"><h4>Movie 4</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="entertainment"><h4>Movie 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
   <div class="category-section">
     <div class="category-title">📚 Study</div>
     <div class="post-grid">
-      <div class="blog-post"><h4>Study 1</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Study 2</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Study 3</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Study 4</h4><p>Short description...</p></div>
-      <div class="blog-post"><h4>Study 5</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="study"><h4>Study 1</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="study"><h4>Study 2</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="study"><h4>Study 3</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="study"><h4>Study 4</h4><p>Short description...</p></div>
+      <div class="blog-post" data-category="study"><h4>Study 5</h4><p>Short description...</p></div>
     </div>
   </div>
 
